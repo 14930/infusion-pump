@@ -1,0 +1,92 @@
+{
+  "d_dose.min_dose_dw_mg": {
+    "type": "min-max",
+    "min": 0.0,
+    "max": 400.0
+  },
+  "d_dose.max_dose_dw_mg": {
+    "type": "min-max",
+    "min": 0.0,
+    "max": 600.0
+  },
+  "d_dose.min_dose_dd_mg": {
+    "type": "min-max",
+    "min": 0.0,
+    "max": 16000.0
+  },
+  "d_dose.max_dose_dd_mg": {
+    "type": "min-max",
+    "min": 0.0,
+    "max": 24000.0
+  },
+  "d_dose.min_dose_dw_iu": {
+    "type": "min-max",
+    "min": 0.0,
+    "max": 50000.0
+  },
+  "d_dose.max_dose_dw_iu": {
+    "type": "min-max",
+    "min": 0.0,
+    "max": 100000.0
+  },
+  "d_dose.min_dose_dd_iu": {
+    "type": "min-max",
+    "min": 0.0,
+    "max": 2400000.0
+  },
+  "d_dose.max_dose_dd_iu": {
+    "type": "min-max",
+    "min": 0.0,
+    "max": 3600000.0
+  },
+  "d_dose.limit_mg": {
+    "type": "min-max",
+    "min": 0.0,
+    "max": 24000.0
+  },
+  "d_dose.limit_iu": {
+    "type": "min-max",
+    "min": 0.0,
+    "max": 2400000.0
+  },
+  "d_dose.min_age_d": {
+    "type": "standard",
+    "mean": 1.212059620596206,
+    "std": 5.14319686258474
+  },
+  "d_dose.max_age_d": {
+    "type": "standard",
+    "mean": 895.5325203252032,
+    "std": 300.50314684992196
+  },
+  "d_dose.min_age_m": {
+    "type": "standard",
+    "mean": 0.5074525745257452,
+    "std": 1.2260357613155277
+  },
+  "d_dose.max_age_m": {
+    "type": "standard",
+    "mean": 987.8760162601626,
+    "std": 104.63934708789242
+  },
+  "d_dose.min_age_y": {
+    "type": "standard",
+    "mean": 6.854674796747967,
+    "std": 7.7990836007262105
+  },
+  "d_dose.max_age_y": {
+    "type": "standard",
+    "mean": 184.21443089430895,
+    "std": 306.48755035777833
+  },
+  "d_dose.min_weight": {
+    "type": "standard",
+    "mean": 1.5685840108401088,
+    "std": 7.456569794552905
+  },
+  "d_dose.max_weight": {
+    "type": "standard",
+    "mean": 949.333587398374,
+    "std": 213.9783710692085
+  }
+}

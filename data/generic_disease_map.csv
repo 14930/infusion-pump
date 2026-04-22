@@ -1,0 +1,1067 @@
+generic,disease
+Amikacin,Bacteremia
+Amikacin,Bacterial Infection
+Amikacin,Bone and Joint Infection
+Amikacin,Intraabdominal Infection
+Amikacin,Meningitis
+Amikacin,Mycobacterium avium-intracellulare - Treatment
+Amikacin,Osteomyelitis
+Amikacin,Peritonitis
+Amikacin,Pneumonia
+Amikacin,Skin or Soft Tissue Infection
+Amikacin,Tuberculosis - Active
+Amikacin,Urinary Tract Infection
+Amoxicillin,Anthrax Prophylaxis
+Amoxicillin,Bacterial Endocarditis Prophylaxis
+Amoxicillin,Bronchitis
+Amoxicillin,Chlamydia Infection
+Amoxicillin,Cutaneous Bacillus anthracis
+Amoxicillin,Helicobacter pylori Infection
+Amoxicillin,Inhalation Bacillus anthracis
+Amoxicillin,Lyme Disease
+Amoxicillin,Lyme Disease - Arthritis
+Amoxicillin,Lyme Disease - Carditis
+Amoxicillin,Lyme Disease - Erythema Chronicum Migrans
+Amoxicillin,Otitis Media
+Amoxicillin,Pneumonia
+Amoxicillin,Sinusitis
+Amoxicillin,Skin and Structure Infection
+Amoxicillin,Skin or Soft Tissue Infection
+Amoxicillin,Streptococcus pneumoniae
+Amoxicillin,Tonsillitis/Pharyngitis
+Amoxicillin,Urinary Tract Infection
+Amoxicillin  + Clavulanic Acid,Acute otitis media
+Amoxicillin  + Clavulanic Acid,Aspiration Pneumonia
+Amoxicillin  + Clavulanic Acid,Bacterial Infection
+Amoxicillin  + Clavulanic Acid,Bronchitis
+Amoxicillin  + Clavulanic Acid,Febrile Neutropenia
+Amoxicillin  + Clavulanic Acid,Melioidosis
+Amoxicillin  + Clavulanic Acid,Otitis Media
+Amoxicillin  + Clavulanic Acid,Pneumonia
+Amoxicillin  + Clavulanic Acid,Pyelonephritis
+Amoxicillin  + Clavulanic Acid,Sinusitis
+Amoxicillin  + Clavulanic Acid,Skin and Structure Infection
+Amoxicillin  + Clavulanic Acid,Skin or Soft Tissue Infection
+Amoxicillin  + Clavulanic Acid,Upper Respiratory Tract Infection
+Amoxicillin  + Clavulanic Acid,Urinary Tract Infection
+Amphotericin B,Aspergillosis - Invasive
+Amphotericin B,Blastomycosis
+Amphotericin B,Candida Urinary Tract Infection
+Amphotericin B,Candidemia
+Amphotericin B,Coccidioidomycosis
+Amphotericin B,Cryptococcal Meningitis - Immunocompetent Host
+Amphotericin B,Cryptococcal Meningitis - Immunosuppressed Host
+Amphotericin B,Histoplasmosis - Immunocompetent Host
+Amphotericin B,Leishmaniasis
+Amphotericin B,Mucormycosis - Invasive
+Amphotericin B,Ocular Fungal Infection
+Amphotericin B,Oral Thrush
+Amphotericin B,Sporotrichosis
+Amphotericin B,Systemic Fungal Infection
+Ampicillin,Bacterial Endocarditis Prophylaxis
+Ampicillin,Bacterial Infection
+Ampicillin,Bronchitis
+Ampicillin,Cutaneous Bacillus anthracis
+Ampicillin,Endocarditis
+Ampicillin,Gastroenteritis
+Ampicillin,Gonococcal Infection - Uncomplicated
+Ampicillin,Inhalation Bacillus anthracis
+Ampicillin,Intraabdominal Infection
+Ampicillin,Meningitis
+Ampicillin,Meningitis - Streptococcus Group B
+Ampicillin,Pharyngitis
+Ampicillin,Pneumonia
+Ampicillin,Septicemia
+Ampicillin,Shigellosis
+Ampicillin,Sinusitis
+Ampicillin,Skin or Soft Tissue Infection
+Ampicillin,Surgical Prophylaxis
+Ampicillin,Typhoid Fever
+Ampicillin,Upper Respiratory Tract Infection
+Ampicillin,Urinary Tract Infection
+Artemether,Malaria
+Artemether + Lumefantrine,Malaria
+Artesunate,Malaria
+Azithromycin,Babesiosis
+Azithromycin,Bacterial Endocarditis Prophylaxis
+Azithromycin,Bacterial Infection
+Azithromycin,Bartonellosis
+Azithromycin,Bronchitis
+Azithromycin,Campylobacter Gastroenteritis
+Azithromycin,Cervicitis
+Azithromycin,Chancroid
+Azithromycin,Chlamydia Infection
+Azithromycin,Gonococcal Infection - Uncomplicated
+Azithromycin,Granuloma Inguinale
+Azithromycin,Legionella Pneumonia
+Azithromycin,Lyme Disease - Erythema Chronicum Migrans
+Azithromycin,Mycobacterium avium-intracellulare - Prophylaxis
+Azithromycin,Mycobacterium avium-intracellulare - Treatment
+Azithromycin,Mycobacterium kansasii
+Azithromycin,Mycoplasma Pneumonia
+Azithromycin,Nongonococcal Urethritis
+Azithromycin,Otitis Media
+Azithromycin,Pelvic Inflammatory Disease
+Azithromycin,Pertussis Prophylaxis
+Azithromycin,Pneumonia
+Azithromycin,Shigellosis
+Azithromycin,Sinusitis
+Azithromycin,Skin and Structure Infection
+Azithromycin,Syphilis - Early
+Azithromycin,Tonsillitis/Pharyngitis
+Aztreonam,Bacteremia
+Aztreonam,Bacterial Infection
+Aztreonam,Febrile Neutropenia
+Aztreonam,Intraabdominal Infection
+Aztreonam,Osteomyelitis
+Aztreonam,Pelvic Inflammatory Disease
+Aztreonam,Peritonitis
+Aztreonam,Pneumonia
+Aztreonam,Pyelonephritis
+Aztreonam,Skin and Structure Infection
+Aztreonam,Skin or Soft Tissue Infection
+Aztreonam,Urinary Tract Infection
+Benzathine Penicillin,Bejel
+Benzathine Penicillin,Congenital Syphilis
+Benzathine Penicillin,Glomerulonephritis
+Benzathine Penicillin,Neurosyphilis
+Benzathine Penicillin,Pharyngitis
+Benzathine Penicillin,Pinta
+Benzathine Penicillin,Rheumatic Fever Prophylaxis
+Benzathine Penicillin,Streptococcal Infection
+Benzathine Penicillin,Syphilis - Early
+Benzathine Penicillin,Syphilis - Latent
+Benzathine Penicillin,Tertiary Syphilis
+Benzathine Penicillin,Tonsillitis/Pharyngitis
+Benzathine Penicillin,Upper Respiratory Tract Infection
+Benzathine Penicillin,Yaws
+Benzyl Penicillin,Actinomycosis
+Benzyl Penicillin,Anthrax
+Benzyl Penicillin,Bacterial Endocarditis Prophylaxis
+Benzyl Penicillin,Bacterial Meningitis
+Benzyl Penicillin,Botulism
+Benzyl Penicillin,Brain abscess
+Benzyl Penicillin,Diphtheria
+Benzyl Penicillin,Gas gangrene
+Benzyl Penicillin,Leptospirosis
+Benzyl Penicillin,Listeriosis
+Benzyl Penicillin,Lyme Disease
+Benzyl Penicillin,Meningitis - Streptococcus Group B
+Benzyl Penicillin,Meningococcal Disease
+Benzyl Penicillin,Neurosyphilis
+Benzyl Penicillin,Osteomyelitis
+Benzyl Penicillin,Pasteurella infection
+Benzyl Penicillin,Rat bite fever
+Benzyl Penicillin,Respiratory Track Infections
+Benzyl Penicillin,Septicemia
+Benzyl Penicillin,Severe Leptospirosis
+Benzyl Penicillin,Skin or Soft Tissue Infection
+Benzyl Penicillin,Suspected Meningococcal Infection
+Benzyl Penicillin,Tetanus
+Benzyl Penicillin+  Procaine Penicillin,Anthrax
+Benzyl Penicillin+  Procaine Penicillin,Bacterial Endocarditis Prophylaxis
+Benzyl Penicillin+  Procaine Penicillin,Diphtheria
+Benzyl Penicillin+  Procaine Penicillin,Neurosyphilis
+Benzyl Penicillin+  Procaine Penicillin,Otitis Media
+Benzyl Penicillin+  Procaine Penicillin,Pneumonia
+Benzyl Penicillin+  Procaine Penicillin,Rat bite fever
+Benzyl Penicillin+  Procaine Penicillin,Skin or Soft Tissue Infection
+Benzyl Penicillin+  Procaine Penicillin,Staphylococcul Infections
+Benzyl Penicillin+  Procaine Penicillin,Streptococcal Infection
+Benzyl Penicillin+  Procaine Penicillin,Syphillis
+Benzyl Penicillin+  Procaine Penicillin,Upper Respiratory Tract Infection
+Benzyl Penicillin+  Procaine Penicillin,Whipples disease
+Cefaclor,Bacterial Infection
+Cefaclor,Bronchitis
+Cefaclor,Cystitis
+Cefaclor,Otitis Media
+Cefaclor,Pneumonia
+Cefaclor,Pyelonephritis
+Cefaclor,Skin and Structure Infection
+Cefaclor,Tonsillitis/Pharyngitis
+Cefaclor,Upper Respiratory Tract Infection
+Cefaclor,Urinary Tract Infection
+Cefadroxil,Bacterial Infection
+Cefadroxil,Cystitis
+Cefadroxil,Impetigo
+Cefadroxil,Osteomyelitis
+Cefadroxil,Pyelonephritis
+Cefadroxil,Skin and Structure Infection
+Cefadroxil,Skin or Soft Tissue Infection
+Cefadroxil,Tonsillitis/Pharyngitis
+Cefadroxil,Urinary Tract Infection
+Cefazolin,Bacterial Endocarditis Prophylaxis
+Cefazolin,Bacterial Infection
+Cefazolin,Bacterial Infection (Mild Infections)
+Cefazolin,Bacterial Infection (Moderate Infections)
+Cefazolin,"Bacterial Infection (Severe, life-threatening)"
+Cefazolin,Bone and Joint Infection
+Cefazolin,Bone and Joint Infection (Mild Infections)
+Cefazolin,Bone and Joint Infection (Moderate Infections)
+Cefazolin,"Bone and Joint Infection (Severe, life-threatening)"
+Cefazolin,Cholecystitis
+Cefazolin,Cholecystitis (Mild infections)
+Cefazolin,Cholecystitis (Moderate infections)
+Cefazolin,"Cholecystitis (Severe, life-threatening infections)"
+Cefazolin,Endocarditis
+Cefazolin,Epididymitis - Non-Specific
+Cefazolin,Epididymitis - Non-Specific (Mild Infections)
+Cefazolin,Epididymitis - Non-Specific (Moderate Infections)
+Cefazolin,"Epididymitis - Non-Specific (Severe, life-threatening)"
+Cefazolin,Meningitis - Streptococcus Group B
+Cefazolin,Osteomyelitis
+Cefazolin,Osteomyelitis (Mild Infections)
+Cefazolin,Osteomyelitis (Moderate Infections)
+Cefazolin,"Osteomyelitis (Severe, life-threatening)"
+Cefazolin,Peritonitis
+Cefazolin,Pneumonia
+Cefazolin,Prostatitis
+Cefazolin,Prostatitis (Mild Infections)
+Cefazolin,Prostatitis (Moderate Infections)
+Cefazolin,"Prostatitis (Severe, life-threatening)"
+Cefazolin,Septicemia
+Cefazolin,Septicemia (Mild Infections)
+Cefazolin,Septicemia (Moderate Infections)
+Cefazolin,"Septicemia (Severe, life-threatening)"
+Cefazolin,Skin and Structure Infection
+Cefazolin,Skin and Structure Infection (Mild Infections)
+Cefazolin,Skin and Structure Infection (Moderate Infections)
+Cefazolin,"Skin and Structure Infection (Severe, life-threatening)"
+Cefazolin,Skin or Soft Tissue Infection
+Cefazolin,Skin or Soft Tissue Infection (Mild Infections)
+Cefazolin,Skin or Soft Tissue Infection (Moderate Infections)
+Cefazolin,"Skin or Soft Tissue Infection (Severe, life-threatening)"
+Cefazolin,Surgical Prophylaxis
+Cefazolin,Urinary Tract Infection
+Cefdinir,Bronchitis
+Cefdinir,Otitis Media
+Cefdinir,Pneumonia
+Cefdinir,Sinusitis
+Cefdinir,Skin and Structure Infection
+Cefdinir,Skin or Soft Tissue Infection
+Cefdinir,Tonsillitis/Pharyngitis
+Cefditoren,Bronchitis
+Cefditoren,Pneumonia
+Cefditoren,Skin or Soft Tissue Infection
+Cefditoren,Tonsillitis/Pharyngitis
+Cefepime,Bacteremia
+Cefepime,Bacterial Infection
+Cefepime,Bone and Joint Infection
+Cefepime,Endocarditis
+Cefepime,Febrile Neutropenia
+Cefepime,Intraabdominal Infection
+Cefepime,Meningitis
+Cefepime,Meningitis - Haemophilus influenzae
+Cefepime,Meningitis - Listeriosis
+Cefepime,Meningitis - Meningococcal
+Cefepime,Meningitis - Pneumococcal
+Cefepime,Meningitis - Streptococcus Group B
+Cefepime,Nosocomial Pneumonia
+Cefepime,Osteomyelitis
+Cefepime,Peritonitis
+Cefepime,Pneumonia
+Cefepime,Pyelonephritis
+Cefepime,Skin and Structure Infection
+Cefepime,Urinary Tract Infection
+Cefetamet  Pivoxil Hydrochloride,Enterobacteriaceae
+Cefetamet  Pivoxil Hydrochloride,Group A hemolytic streptococci
+Cefetamet  Pivoxil Hydrochloride,Haemophilus influenzae
+Cefetamet  Pivoxil Hydrochloride,Moraxella catarrhalis
+Cefetamet  Pivoxil Hydrochloride,Neisseria gonorrhoeae
+Cefetamet  Pivoxil Hydrochloride,Streptococcus pneumoniae
+Cefixime,Bacterial Infection
+Cefixime,Bronchitis
+Cefixime,Gonococcal Infection - Uncomplicated
+Cefixime,Otitis Media
+Cefixime,Tonsillitis/Pharyngitis
+Cefixime,Urinary Tract Infection
+Cefoperazone,Bacteremia
+Cefoperazone,Bone and Joint Infection
+Cefoperazone,Endometritis
+Cefoperazone,Febrile Neutropenia
+Cefoperazone,Intraabdominal Infection
+Cefoperazone,Pelvic Inflammatory Disease
+Cefoperazone,Peritonitis
+Cefoperazone,Pneumonia
+Cefoperazone,Pyelonephritis
+Cefoperazone,Skin or Soft Tissue Infection
+Cefoperazone,Urinary Tract Infection
+Cefotaxime,Bacteremia
+Cefotaxime,Bone and Joint Infection
+Cefotaxime,CNS Infection
+Cefotaxime,Cesarean Section
+Cefotaxime,Endometritis
+Cefotaxime,Gonococcal Infection - Disseminated
+Cefotaxime,Gonococcal Infection - Uncomplicated
+Cefotaxime,Intraabdominal Infection
+Cefotaxime,Lyme Disease - Neurologic
+Cefotaxime,Meningitis
+Cefotaxime,Osteomyelitis
+Cefotaxime,Pelvic Inflammatory Disease
+Cefotaxime,Peritonitis
+Cefotaxime,Pneumonia
+Cefotaxime,Rhinitis
+Cefotaxime,Sepsis
+Cefotaxime,Septicemia
+Cefotaxime,Sinusitis
+Cefotaxime,Skin or Soft Tissue Infection
+Cefotaxime,Surgical Prophylaxis
+Cefotaxime,Urinary Tract Infection
+Cefoxitin,Aspiration Pneumonia
+Cefoxitin,Bacterial Infection
+Cefoxitin,Bone and Joint Infection
+Cefoxitin,Cesarean Section
+Cefoxitin,Endometritis
+Cefoxitin,Gonococcal Infection - Uncomplicated
+Cefoxitin,Intraabdominal Infection
+Cefoxitin,Osteomyelitis
+Cefoxitin,Pelvic Inflammatory Disease
+Cefoxitin,Peritonitis
+Cefoxitin,Pneumonia
+Cefoxitin,Septicemia
+Cefoxitin,Skin and Structure Infection
+Cefoxitin,Surgical Prophylaxis
+Cefoxitin,Urinary Tract Infection
+Cefpirome,Bacteremia
+Cefpirome,Infections by neutropenic host
+Cefpirome,Lower Respiratory Track Infections
+Cefpirome,Septicemia
+Cefpirome,Severe infections in intensive care patients
+Cefpirome,Skin or Soft Tissue Infection
+Cefpirome,Urinary Tract Infection
+Cefpodoxime,Cystitis
+Cefpodoxime,Gonococcal Infection - Disseminated
+Cefpodoxime,Gonococcal Infection - Uncomplicated
+Cefpodoxime,Otitis Media
+Cefpodoxime,Pneumonia
+Cefpodoxime,Pyelonephritis
+Cefpodoxime,Sinusitis
+Cefpodoxime,Skin or Soft Tissue Infection
+Cefpodoxime,Tonsillitis/Pharyngitis
+Cefpodoxime,Upper Respiratory Tract Infection
+Cefpodoxime  + Clavulanic Acid,Cystitis
+Cefpodoxime  + Clavulanic Acid,Gonococcal Infection - Disseminated
+Cefpodoxime  + Clavulanic Acid,Gonococcal Infection - Uncomplicated
+Cefpodoxime  + Clavulanic Acid,Otitis Media
+Cefpodoxime  + Clavulanic Acid,Pneumonia
+Cefpodoxime  + Clavulanic Acid,Pyelonephritis
+Cefpodoxime  + Clavulanic Acid,Sinusitis
+Cefpodoxime  + Clavulanic Acid,Skin or Soft Tissue Infection
+Cefpodoxime  + Clavulanic Acid,Tonsillitis/Pharyngitis
+Cefpodoxime  + Clavulanic Acid,Upper Respiratory Tract Infection
+Cefprozil,Bronchitis
+Cefprozil,Cystitis
+Cefprozil,Otitis Media
+Cefprozil,Pneumonia
+Cefprozil,Pyelonephritis
+Cefprozil,Sinusitis
+Cefprozil,Skin or Soft Tissue Infection
+Cefprozil,Tonsillitis/Pharyngitis
+Cefprozil,Upper Respiratory Tract Infection
+Ceftazidime,Bacteremia
+Ceftazidime,Bacterial Infection
+Ceftazidime,Bone and Joint Infection
+Ceftazidime,Cystitis
+Ceftazidime,Endocarditis
+Ceftazidime,Endometriosis
+Ceftazidime,Endometritis
+Ceftazidime,Febrile Neutropenia
+Ceftazidime,Intraabdominal Infection
+Ceftazidime,Meningitis
+Ceftazidime,Nosocomial Pneumonia
+Ceftazidime,Osteomyelitis
+Ceftazidime,Pelvic Infections
+Ceftazidime,Pelvic Inflammatory Disease
+Ceftazidime,Peritonitis
+Ceftazidime,Pneumonia
+Ceftazidime,Pneumonia with Cystic Fibrosis
+Ceftazidime,Pyelonephritis
+Ceftazidime,Sepsis
+Ceftazidime,Septicemia
+Ceftazidime,Skin and Structure Infection
+Ceftazidime,Skin or Soft Tissue Infection
+Ceftazidime,Urinary Tract Infection
+Ceftibuten,Bronchitis
+Ceftibuten,Otitis Media
+Ceftibuten,Tonsillitis/Pharyngitis
+Ceftriaxone,Bacteremia
+Ceftriaxone,Bacterial Endocarditis Prophylaxis
+Ceftriaxone,Bacterial Infection
+Ceftriaxone,Bone and Joint Infection
+Ceftriaxone,Bronchitis
+Ceftriaxone,Chancroid
+Ceftriaxone,Conjunctivitis
+Ceftriaxone,Endocarditis
+Ceftriaxone,Gonococcal Infection - Disseminated
+Ceftriaxone,Gonococcal Infection - Uncomplicated
+Ceftriaxone,Intraabdominal Infection
+Ceftriaxone,Lyme Disease
+Ceftriaxone,Lyme Disease - Arthritis
+Ceftriaxone,Lyme Disease - Carditis
+Ceftriaxone,Lyme Disease - Neurologic
+Ceftriaxone,Meningitis
+Ceftriaxone,Meningococcal Meningitis Prophylaxis
+Ceftriaxone,Neurosyphilis
+Ceftriaxone,Ocular Infection
+Ceftriaxone,Osteomyelitis
+Ceftriaxone,Otitis Media
+Ceftriaxone,Pelvic Inflammatory Disease
+Ceftriaxone,Pneumonia
+Ceftriaxone,Proctitis
+Ceftriaxone,STD Prophylaxis
+Ceftriaxone,Salmonella Enteric Fever
+Ceftriaxone,Salmonella Gastroenteritis
+Ceftriaxone,Septicemia
+Ceftriaxone,Skin and Structure Infection
+Ceftriaxone,Skin or Soft Tissue Infection
+Ceftriaxone,Surgical Prophylaxis
+Ceftriaxone,Syphilis - Early
+Ceftriaxone,Urinary Tract Infection
+Cefuroxime,Appendicitis
+Cefuroxime,Bacterial Infection
+Cefuroxime,Bone and Joint Infection
+Cefuroxime,Bronchitis
+Cefuroxime,Cholecystitis
+Cefuroxime,Gonococcal Infection - Disseminated
+Cefuroxime,Gonococcal Infection - Uncomplicated
+Cefuroxime,Impetigo
+Cefuroxime,Intraabdominal Infection
+Cefuroxime,Lyme Disease
+Cefuroxime,Meningitis
+Cefuroxime,Osteomyelitis
+Cefuroxime,Otitis Media
+Cefuroxime,Pneumonia
+Cefuroxime,Septicemia
+Cefuroxime,Sinusitis
+Cefuroxime,Skin and Structure Infection
+Cefuroxime,Skin or Soft Tissue Infection
+Cefuroxime,Surgical Prophylaxis
+Cefuroxime,Tonsillitis/Pharyngitis
+Cefuroxime,Urinary Tract Infection
+Cefuroxime,Wound Infection
+Cefuroxime + Clavulanic Acid,Appendicitis
+Cefuroxime + Clavulanic Acid,Bacterial Infection
+Cefuroxime + Clavulanic Acid,Bone and Joint Infection
+Cefuroxime + Clavulanic Acid,Bronchitis
+Cefuroxime + Clavulanic Acid,Cholecystitis
+Cefuroxime + Clavulanic Acid,Gonococcal Infection - Disseminated
+Cefuroxime + Clavulanic Acid,Gonococcal Infection - Uncomplicated
+Cefuroxime + Clavulanic Acid,Impetigo
+Cefuroxime + Clavulanic Acid,Intraabdominal Infection
+Cefuroxime + Clavulanic Acid,Lyme Disease
+Cefuroxime + Clavulanic Acid,Meningitis
+Cefuroxime + Clavulanic Acid,Osteomyelitis
+Cefuroxime + Clavulanic Acid,Otitis Media
+Cefuroxime + Clavulanic Acid,Pneumonia
+Cefuroxime + Clavulanic Acid,Septicemia
+Cefuroxime + Clavulanic Acid,Sinusitis
+Cefuroxime + Clavulanic Acid,Skin and Structure Infection
+Cefuroxime + Clavulanic Acid,Skin or Soft Tissue Infection
+Cefuroxime + Clavulanic Acid,Surgical Prophylaxis
+Cefuroxime + Clavulanic Acid,Tonsillitis/Pharyngitis
+Cefuroxime + Clavulanic Acid,Urinary Tract Infection
+Cefuroxime + Clavulanic Acid,Wound Infection
+Cephalexin,Bacterial Endocarditis Prophylaxis
+Cephalexin,Bacterial Infection
+Cephalexin,Cystitis
+Cephalexin,Osteomyelitis
+Cephalexin,Otitis Media
+Cephalexin,Pharyngitis
+Cephalexin,Prostatitis
+Cephalexin,Pyelonephritis
+Cephalexin,Skin or Soft Tissue Infection
+Cephalexin,Upper Respiratory Tract Infection
+Cephradine,Bacterial Infection
+Cephradine,Cystitis
+Cephradine,Otitis Media
+Cephradine,Pharyngitis
+Cephradine,Pyelonephritis
+Cephradine,Skin and Structure Infection
+Cephradine,Skin or Soft Tissue Infection
+Cephradine,Upper Respiratory Tract Infection
+Chloramphenicol,Bacteremia
+Chloramphenicol,Bacterial Infection
+Chloramphenicol,Cutaneous Bacillus anthracis
+Chloramphenicol,Cystic Fibrosis
+Chloramphenicol,Gram Negative Infection
+Chloramphenicol,Inhalation Bacillus anthracis
+Chloramphenicol,Meningitis
+Chloramphenicol,Ornithosis
+Chloramphenicol,Plague
+Chloramphenicol,Psittacosis
+Chloramphenicol,Rickettsial Infection
+Chloramphenicol,Tularemia
+Chloramphenicol,Typhoid Fever
+Ciprofloxacin,Anthrax Prophylaxis
+Ciprofloxacin,Bone and Joint Infection
+Ciprofloxacin,Bronchitis
+Ciprofloxacin,Chancroid
+Ciprofloxacin,Cutaneous Bacillus anthracis
+Ciprofloxacin,Cystitis
+Ciprofloxacin,Febrile Neutropenia
+Ciprofloxacin,Gonococcal Infection - Uncomplicated
+Ciprofloxacin,Granuloma Inguinale
+Ciprofloxacin,Infectious Diarrhea
+Ciprofloxacin,Inhalation Bacillus anthracis
+Ciprofloxacin,Intraabdominal Infection
+Ciprofloxacin,Meningococcal Meningitis Prophylaxis
+Ciprofloxacin,Nosocomial Pneumonia
+Ciprofloxacin,Osteomyelitis
+Ciprofloxacin,Plague
+Ciprofloxacin,Plague Prophylaxis
+Ciprofloxacin,Pneumonia
+Ciprofloxacin,Pneumonia with Cystic Fibrosis
+Ciprofloxacin,Prostatitis
+Ciprofloxacin,Pyelonephritis
+Ciprofloxacin,Salmonella Enteric Fever
+Ciprofloxacin,Salmonella Gastroenteritis
+Ciprofloxacin,Shigellosis
+Ciprofloxacin,Sinusitis
+Ciprofloxacin,Skin and Structure Infection
+Ciprofloxacin,Skin or Soft Tissue Infection
+Ciprofloxacin,Surgical Prophylaxis
+Ciprofloxacin,Tularemia
+Ciprofloxacin,Typhoid Fever
+Ciprofloxacin,Urinary Tract Infection
+Ciprofloxacin Hydrochloride,Anthrax Prophylaxis
+Ciprofloxacin Hydrochloride,Bone and Joint Infection
+Ciprofloxacin Hydrochloride,Bronchitis
+Ciprofloxacin Hydrochloride,Chancroid
+Ciprofloxacin Hydrochloride,Cutaneous Bacillus anthracis
+Ciprofloxacin Hydrochloride,Cystitis
+Ciprofloxacin Hydrochloride,Febrile Neutropenia
+Ciprofloxacin Hydrochloride,Gonococcal Infection - Uncomplicated
+Ciprofloxacin Hydrochloride,Granuloma Inguinale
+Ciprofloxacin Hydrochloride,Infectious Diarrhea
+Ciprofloxacin Hydrochloride,Inhalation Bacillus anthracis
+Ciprofloxacin Hydrochloride,Intraabdominal Infection
+Ciprofloxacin Hydrochloride,Meningococcal Meningitis Prophylaxis
+Ciprofloxacin Hydrochloride,Nosocomial Pneumonia
+Ciprofloxacin Hydrochloride,Osteomyelitis
+Ciprofloxacin Hydrochloride,Plague
+Ciprofloxacin Hydrochloride,Plague Prophylaxis
+Ciprofloxacin Hydrochloride,Pneumonia
+Ciprofloxacin Hydrochloride,Pneumonia with Cystic Fibrosis
+Ciprofloxacin Hydrochloride,Prostatitis
+Ciprofloxacin Hydrochloride,Pyelonephritis
+Ciprofloxacin Hydrochloride,Salmonella Enteric Fever
+Ciprofloxacin Hydrochloride,Salmonella Gastroenteritis
+Ciprofloxacin Hydrochloride,Shigellosis
+Ciprofloxacin Hydrochloride,Sinusitis
+Ciprofloxacin Hydrochloride,Skin and Structure Infection
+Ciprofloxacin Hydrochloride,Skin or Soft Tissue Infection
+Ciprofloxacin Hydrochloride,Surgical Prophylaxis
+Ciprofloxacin Hydrochloride,Tularemia
+Ciprofloxacin Hydrochloride,Typhoid Fever
+Ciprofloxacin Hydrochloride,Urinary Tract Infection
+Clarithromycin,Bacterial Endocarditis Prophylaxis
+Clarithromycin,Bronchitis
+Clarithromycin,Helicobacter pylori Infection
+Clarithromycin,Legionella Pneumonia
+Clarithromycin,Mycobacterium avium-intracellulare - Prophylaxis
+Clarithromycin,Mycobacterium avium-intracellulare - Treatment
+Clarithromycin,Mycoplasma Pneumonia
+Clarithromycin,Otitis Media
+Clarithromycin,Pertussis Prophylaxis
+Clarithromycin,Pneumonia
+Clarithromycin,Sinusitis
+Clarithromycin,Skin and Structure Infection
+Clarithromycin,Tonsillitis/Pharyngitis
+Clindamycin,Bacterial Infection
+Clindamycin + Anhydrous Benzoyl Peroxide,Bacterial Infection
+Cloxacillin,Pneumonia
+Cloxacillin,Skin and Structure Infection
+Cloxacillin,Upper Respiratory Tract Infection
+Dapsone,Dermatitis Herpetiformis
+Dapsone,Leprosy
+Dapsone,Leprosy - Lepromatous
+Dapsone,Leprosy - Tuberculoid
+Dapsone,Pneumocystis Pneumonia
+Dapsone,Pneumocystis Pneumonia Prophylaxis
+Dapsone,Toxoplasmosis - Prophylaxis
+Demeclocycline Hydrochloride,Bacterial Infection
+Demeclocycline Hydrochloride,SIADH
+Dicloxacillin,Bronchitis
+Dicloxacillin,Osteomyelitis
+Dicloxacillin,Pharyngitis
+Dicloxacillin,Pneumonia
+Dicloxacillin,Skin or Soft Tissue Infection
+Dicloxacillin,Upper Respiratory Tract Infection
+Doripenem,Intraabdominal Infection
+Doripenem,Pyelonephritis
+Doripenem,Urinary Tract Infection
+Doxycycline,Acne
+Doxycycline,Acne Rosacea
+Doxycycline,Actinomycosis
+Doxycycline,Amebiasis
+Doxycycline,Anthrax Prophylaxis
+Doxycycline,Bacterial Infection
+Doxycycline,Bartonellosis
+Doxycycline,Bone and Joint Infection
+Doxycycline,Bronchitis
+Doxycycline,Brucellosis
+Doxycycline,Cervicitis
+Doxycycline,Chancroid
+Doxycycline,Chlamydia Infection
+Doxycycline,Cholera
+Doxycycline,Cutaneous Bacillus anthracis
+Doxycycline,Epididymitis - Sexually Transmitted
+Doxycycline,Gonococcal Infection - Uncomplicated
+Doxycycline,Granuloma Inguinale
+Doxycycline,Inclusion Conjunctivitis
+Doxycycline,Inhalation Bacillus anthracis
+Doxycycline,Lyme Disease
+Doxycycline,Lyme Disease - Arthritis
+Doxycycline,Lyme Disease - Carditis
+Doxycycline,Lyme Disease - Erythema Chronicum Migrans
+Doxycycline,Lyme Disease - Neurologic
+Doxycycline,Lymphogranuloma Venereum
+Doxycycline,Malaria
+Doxycycline,Malaria Prophylaxis
+Doxycycline,Melioidosis
+Doxycycline,Mycoplasma Pneumonia
+Doxycycline,Nongonococcal Urethritis
+Doxycycline,Ornithosis
+Doxycycline,Pelvic Inflammatory Disease
+Doxycycline,Periodontitis
+Doxycycline,Plague
+Doxycycline,Plague Prophylaxis
+Doxycycline,Pleural Effusion
+Doxycycline,Pneumonia
+Doxycycline,Proctitis
+Doxycycline,Psittacosis
+Doxycycline,Q Fever
+Doxycycline,Rickettsial Infection
+Doxycycline,STD Prophylaxis
+Doxycycline,Sinusitis
+Doxycycline,Skin or Soft Tissue Infection
+Doxycycline,Syphilis - Early
+Doxycycline,Syphilis - Latent
+Doxycycline,Trachoma
+Doxycycline,Tularemia
+Doxycycline,Upper Respiratory Tract Infection
+Doxycycline,Urinary Tract Infection
+Doxycycline,Wound Infection
+Ertapenem,Infection Prophylaxis
+Ertapenem,Intraabdominal Infection
+Ertapenem,Pelvic Infections
+Ertapenem,Pneumonia
+Ertapenem,Pyelonephritis
+Ertapenem,Skin or Soft Tissue Infection
+Ertapenem,Urinary Tract Infection
+Erythromycin,Amebiasis
+Erythromycin,Bacteremia
+Erythromycin,Bacterial Endocarditis Prophylaxis
+Erythromycin,Bacterial Infection
+Erythromycin,Bartonellosis
+Erythromycin,Bowel Preparation
+Erythromycin,Bronchitis
+Erythromycin,Campylobacter Gastroenteritis
+Erythromycin,Chancroid
+Erythromycin,Chlamydia Infection
+Erythromycin,Diphtheria
+Erythromycin,Gastroenteritis
+Erythromycin,Granuloma Inguinale
+Erythromycin,Impetigo
+Erythromycin,Legionella Pneumonia
+Erythromycin,Lyme Disease
+Erythromycin,Lymphogranuloma Venereum
+Erythromycin,Mycoplasma Pneumonia
+Erythromycin,Nongonococcal Urethritis
+Erythromycin,Osteomyelitis
+Erythromycin,Otitis Media
+Erythromycin,Pelvic Inflammatory Disease
+Erythromycin,Pertussis Prophylaxis
+Erythromycin,Pharyngitis
+Erythromycin,Pneumonia
+Erythromycin,Rheumatic Fever Prophylaxis
+Erythromycin,Skin and Structure Infection
+Erythromycin,Skin or Soft Tissue Infection
+Erythromycin,Surgical Prophylaxis
+Erythromycin,Syphilis - Early
+Erythromycin,Upper Respiratory Tract Infection
+Ethambutol,Mycobacterium avium-intracellulare - Prophylaxis
+Ethambutol,Mycobacterium avium-intracellulare - Treatment
+Ethambutol,Mycobacterium kansasii
+Ethambutol,Tuberculosis - Active
+Ethambutol + Isoniazid + Pyrazinamide  + Rifampicin,Pulmonary and Extrapulmonary Tuberculosis 
+Flucloxacillin,Acne
+Flucloxacillin,Eczema
+Flucloxacillin,Empyema
+Flucloxacillin,Endocarditis
+Flucloxacillin,Enteritis
+Flucloxacillin,Externa
+Flucloxacillin,Furunculosis
+Flucloxacillin,Impetigo
+Flucloxacillin,Infected Burns
+Flucloxacillin,Infected Wounds
+Flucloxacillin,Lung Abscess
+Flucloxacillin,Meningitis
+Flucloxacillin,Osteomyelitis
+Flucloxacillin,Otitis Media
+Flucloxacillin,Pharyngitis
+Flucloxacillin,Pneumonia
+Flucloxacillin,Quinsy
+Flucloxacillin,Septicemia
+Flucloxacillin,Sinusitis
+Flucloxacillin,Tonsillitis/Pharyngitis
+Flucloxacillin,Ulcer
+Flucloxacillin,Urinary Tract Infection
+Fosfomycin,Bacterial Meningitis
+Fosfomycin,Nosocomial Lower Respiratory Track Infection
+Fosfomycin,Osteomyelitis
+Fosfomycin,Urinary Tract Infection
+Fusidic Acid,Osteomyelitis
+Fusidic Acid,Skin or Soft Tissue Infection
+Gemifloxacin,Bronchitis
+Gemifloxacin,Pneumonia
+Gentamicin,Bacteremia
+Gentamicin,Bacterial Infection
+Gentamicin,Bartonellosis
+Gentamicin,Burns - External
+Gentamicin,CNS Infection
+Gentamicin,Endocarditis
+Gentamicin,Intraabdominal Infection
+Gentamicin,Meningitis
+Gentamicin,Osteomyelitis
+Gentamicin,Pelvic Inflammatory Disease
+Gentamicin,Peritonitis
+Gentamicin,Plague
+Gentamicin,Pneumonia
+Gentamicin,Sepsis
+Gentamicin,Skin or Soft Tissue Infection
+Gentamicin,Surgical Prophylaxis
+Gentamicin,Tularemia
+Gentamicin,Upper Respiratory Tract Infection
+Gentamicin,Urinary Tract Infection
+Imipenem + Cilastatin,Bacteremia
+Imipenem + Cilastatin,Bacterial Infection
+Imipenem + Cilastatin,Bone and Joint Infection
+Imipenem + Cilastatin,Bronchitis
+Imipenem + Cilastatin,Endocarditis
+Imipenem + Cilastatin,Endometritis
+Imipenem + Cilastatin,Intraabdominal Infection
+Imipenem + Cilastatin,Nosocomial Pneumonia
+Imipenem + Cilastatin,Osteomyelitis
+Imipenem + Cilastatin,Pelvic Infections
+Imipenem + Cilastatin,Peritonitis
+Imipenem + Cilastatin,Pneumonia
+Imipenem + Cilastatin,Pyelonephritis
+Imipenem + Cilastatin,Septicemia
+Imipenem + Cilastatin,Skin and Structure Infection
+Imipenem + Cilastatin,Skin or Soft Tissue Infection
+Imipenem + Cilastatin,Urinary Tract Infection
+Isoniazid  + Thiacetazone,Mycobacterium kansasii
+Isoniazid  + Thiacetazone,Tuberculosis - Active
+Isoniazid  + Thiacetazone,Tuberculosis - Latent
+Isoniazid  + Thiacetazone,Tuberculosis - Prophylaxis
+Isoniazid + Pyrazinamide + Rifampicin,Tuberculosis - Active
+Isoniazid + Rifampicin,Tuberculosis - Active
+Levofloxacin,Anthrax Prophylaxis
+Levofloxacin,Bronchitis
+Levofloxacin,Chlamydia Infection
+Levofloxacin,Cutaneous Bacillus anthracis
+Levofloxacin,Cystitis
+Levofloxacin,Epididymitis - Sexually Transmitted
+Levofloxacin,Inhalation Bacillus anthracis
+Levofloxacin,Nongonococcal Urethritis
+Levofloxacin,Nosocomial Pneumonia
+Levofloxacin,Pelvic Inflammatory Disease
+Levofloxacin,Plague
+Levofloxacin,Plague Prophylaxis
+Levofloxacin,Pneumonia
+Levofloxacin,Prostatitis
+Levofloxacin,Pyelonephritis
+Levofloxacin,Sinusitis
+Levofloxacin,Skin and Structure Infection
+Levofloxacin,Tuberculosis - Active
+Levofloxacin,Urinary Tract Infection
+Linezolid,Bacteremia
+Linezolid,Bacterial Infection
+Linezolid,Nosocomial Pneumonia
+Linezolid,Pneumonia
+Linezolid,Skin and Structure Infection
+Lomefloxacin,Bronchitis
+Lomefloxacin,Cystitis
+Lomefloxacin,Prostatitis
+Lomefloxacin,Salmonella Enteric Fever
+Lomefloxacin,Salmonella Gastroenteritis
+Lomefloxacin,Shigellosis
+Lomefloxacin,Transurethral Prostatectomy
+Lomefloxacin,Urinary Tract Infection
+Lymecycline,Bronchitis
+Lymecycline,Intraabdominal Infection
+Lymecycline,Sinusitis
+Lymecycline,Skin or Soft Tissue Infection
+Lymecycline,Trachoma
+Meropenem,Intraabdominal Infection
+Meropenem,Meningitis
+Meropenem,Nosocomial Pneumonia
+Meropenem,Skin and Structure Infection
+Metronidazole,Amebiasis
+Metronidazole,Bacterial Infection
+Metronidazole,Bacterial Vaginosis
+Metronidazole,Balantidium coli
+Metronidazole,Bone and Joint Infection
+Metronidazole,Dientamoeba fragilis
+Metronidazole,Giardiasis
+Metronidazole,Helicobacter pylori Infection
+Metronidazole,Intraabdominal Infection
+Metronidazole,Liver Abscess
+Metronidazole,Meningitis
+Metronidazole,Nongonococcal Urethritis
+Metronidazole,Osteomyelitis
+Metronidazole,Pelvic Inflammatory Disease
+Metronidazole,Peritonitis
+Metronidazole,Pseudomembranous Colitis
+Metronidazole,STD Prophylaxis
+Metronidazole,Skin and Structure Infection
+Metronidazole,Skin or Soft Tissue Infection
+Metronidazole,Surgical Prophylaxis
+Metronidazole,Trichomoniasis
+Metronidazole,Wound Infection
+Moxifloxacin,Anthrax Prophylaxis
+Moxifloxacin,Bronchitis
+Moxifloxacin,Cutaneous Bacillus anthracis
+Moxifloxacin,Inhalation Bacillus anthracis
+Moxifloxacin,Intraabdominal Infection
+Moxifloxacin,Plague
+Moxifloxacin,Plague Prophylaxis
+Moxifloxacin,Pneumonia
+Moxifloxacin,Sinusitis
+Moxifloxacin,Skin and Structure Infection
+Moxifloxacin,Skin or Soft Tissue Infection
+Moxifloxacin,Surgical Prophylaxis
+Moxifloxacin,Tuberculosis - Active
+Nalidixic Acid,Urinary Tract Infection
+Nitrofurantoin,Cystitis
+Nitrofurantoin,Cystitis Prophylaxis
+Nitrofurantoin,Long Term Suppresive Therapy
+Nitrofurantoin,Urinary Tract Infection
+Nitrofurantoin + Nitrofurantoin Microcrystals,Bacterial Infection
+Nitrofurantoin + Nitrofurantoin Microcrystals,Urinary Tract Infection
+Nystatin,Intestinal Candidiasis
+Nystatin,Oral Thrush
+Ofloxacin,Bronchitis
+Ofloxacin,Cervicitis
+Ofloxacin,Chlamydia Infection
+Ofloxacin,Cystitis
+Ofloxacin,Epididymitis - Non-Specific
+Ofloxacin,Epididymitis - Sexually Transmitted
+Ofloxacin,Gonococcal Infection - Uncomplicated
+Ofloxacin,Infectious Diarrhea
+Ofloxacin,Nongonococcal Urethritis
+Ofloxacin,Pelvic Inflammatory Disease
+Ofloxacin,Pneumonia
+Ofloxacin,Prostatitis
+Ofloxacin,Pyelonephritis
+Ofloxacin,Salmonella Enteric Fever
+Ofloxacin,Salmonella Gastroenteritis
+Ofloxacin,Shigellosis
+Ofloxacin,Skin and Structure Infection
+Ofloxacin,Traveler's Diarrhea
+Ofloxacin,Urinary Tract Infection
+Ornidazole,Amebiasis
+Ornidazole,Amoebic Dysentry
+Ornidazole,Bacterial Vaginosis
+Ornidazole,Giardiasis
+Ornidazole,Trichomoniasis
+Oxytetracycline,Acute Epididymo - Orchitis
+Oxytetracycline,Brucellosis
+Oxytetracycline,Cholera
+Oxytetracycline,Intestinal Amoebiasis
+Oxytetracycline,Mycoplasma Pneumonia
+Oxytetracycline,Primary and Secondary Syphilis
+Oxytetracycline,Psittacosis
+Oxytetracycline,Respiratory Track Infections
+Oxytetracycline,Rickettsial Infection
+Oxytetracycline,Sexually Transmitted Disease
+Oxytetracycline,Skin or Soft Tissue Infection
+Oxytetracycline,Trachoma
+Oxytetracycline,Urinary Tract Infection
+Pefloxacin,Abdominal and Hepatobiliary Infection
+Pefloxacin,Bone and Joint Infection
+Pefloxacin,Bronchiectasis
+Pefloxacin,Bronchitis
+Pefloxacin,Cystic Fibrosis
+Pefloxacin,Empyema
+Pefloxacin,Gastrointestinal Infections
+Pefloxacin,Gonorrhoea
+Pefloxacin,Otitis Externa
+Pefloxacin,Otitis Media
+Pefloxacin,Pelvic Infections
+Pefloxacin,Pneumonia
+Pefloxacin,Sinusitis
+Pefloxacin,Tonsillitis/Pharyngitis
+Pefloxacin,Urinary Tract Infection
+Phenoxymethyl  Penicillin,Beta Hemolytic Streptococci of Group A
+Phenoxymethyl  Penicillin,Bronchitis
+Phenoxymethyl  Penicillin,Bronchopneumonia
+Phenoxymethyl  Penicillin,Infection of the Buccal Cavity
+Phenoxymethyl  Penicillin,Laryngitis
+Phenoxymethyl  Penicillin,Lymphadenitis and Lymphangitis of Bacterial Origin
+Phenoxymethyl  Penicillin,Otitis Media
+Phenoxymethyl  Penicillin,Pneumonia
+Phenoxymethyl  Penicillin,Prophylaxis of recurrent rheumatic fever
+Phenoxymethyl  Penicillin,Respiratory Track Infections
+Phenoxymethyl  Penicillin,Sinusitis
+Phenoxymethyl  Penicillin,Skin or Soft Tissue Infection
+Phenoxymethyl  Penicillin,Staphylococcul Infections
+Phenoxymethyl  Penicillin,Tonsillitis/Pharyngitis
+Piperacillin + Tazobactam,Appendicitis
+Piperacillin + Tazobactam,Bacterial Infection
+Piperacillin + Tazobactam,Bacterial Infection with Cystic Fibrosis
+Piperacillin + Tazobactam,Endocarditis
+Piperacillin + Tazobactam,Endometritis
+Piperacillin + Tazobactam,Intraabdominal Infection
+Piperacillin + Tazobactam,Nosocomial Pneumonia
+Piperacillin + Tazobactam,Pelvic Inflammatory Disease
+Piperacillin + Tazobactam,Peritonitis
+Piperacillin + Tazobactam,Pneumonia
+Piperacillin + Tazobactam,Pyelonephritis
+Piperacillin + Tazobactam,Skin and Structure Infection
+Piperacillin + Tazobactam,Skin or Soft Tissue Infection
+Piperacillin + Tazobactam,Surgical Prophylaxis
+Pivmecillinam,Acute uncomplicated cystitis
+Pivmecillinam,Chronic or recurrent bacteriuria
+Pivmecillinam,Salmonellosis
+Pivmecillinam,Shigellosis
+Pivmecillinam,Urinary Tract Infection
+Pyrazinamide,Tuberculosis - Active
+Pyrazinamide,Tuberculosis - Extrapulmonary
+Pyrazinamide,Tuberculosis - Latent
+Rifampicin,Bacteremia
+Rifampicin,Bone and Joint Infection
+Rifampicin,CNS Infection
+Rifampicin,Endocarditis
+Rifampicin,Leprosy
+Rifampicin,Leprosy - Borderline
+Rifampicin,Leprosy - Tuberculoid
+Rifampicin,Meningitis
+Rifampicin,Meningitis - Pneumococcal
+Rifampicin,Meningococcal Meningitis Prophylaxis
+Rifampicin,Nasal Carriage of Staphylococcus aureus
+Rifampicin,Osteomyelitis
+Rifampicin,Tuberculosis - Active
+Rifampicin,Tuberculosis - Latent
+Rifaximin,Clostridioides difficile infection
+Rifaximin,Hepatic Encephalopathy
+Rifaximin,Irritable Bowel Syndrome
+Rifaximin,"Poucitis, acute refractory disease"
+Rifaximin,Small intestinal bacterial overgrowth
+Rifaximin,Traveler's Diarrhea
+Roxithromycin,Bronchitis
+Roxithromycin,Bronchopneumonia
+Roxithromycin,Cervicitis
+Roxithromycin,Nongonococcal Urethritis
+Roxithromycin,Otitis Media
+Roxithromycin,Pharyngitis
+Roxithromycin,Pneumonia
+Roxithromycin,Prostatitis
+Roxithromycin,Salpingitis
+Roxithromycin,Sinusitis
+Roxithromycin,Skin or Soft Tissue Infection
+Roxithromycin,Tonsillitis/Pharyngitis
+Secnidazole,Bacterial Vaginosis
+Secnidazole,Trichomoniasis
+Sparfloxacin,Bronchitis
+Sparfloxacin,Leprosy - Borderline
+Sparfloxacin,Leprosy - Lepromatous
+Sparfloxacin,Pneumonia
+Spectinomycin,Gonorrhoea
+Spiramycine,Toxoplasmosis - Prophylaxis
+Streptomycin,Bacteremia
+Streptomycin,Brucellosis
+Streptomycin,Chancroid
+Streptomycin,Endocarditis
+Streptomycin,Granuloma Inguinale
+Streptomycin,Meningitis
+Streptomycin,Mycobacterium avium-intracellulare - Treatment
+Streptomycin,Mycobacterium kansasii
+Streptomycin,Plague
+Streptomycin,Pneumonia
+Streptomycin,Tuberculosis - Active
+Streptomycin,Tularemia
+Streptomycin,Upper Respiratory Tract Infection
+Streptomycin,Urinary Tract Infection
+Tedizolid Phosphate,Acute Bacterial Skin and Structure Infection
+Teicoplanin,Bacterial Endocarditis Prophylaxis
+Teicoplanin,Bone and Joint Infection
+Teicoplanin,CAPD associated peritonitis
+Teicoplanin,Clostridioides difficile infection
+Teicoplanin,Community acquired pneumonia
+Teicoplanin,Complicated skin and soft tissue infections
+Teicoplanin,Complicated urinary tract infections
+Teicoplanin,Hospital-acquired pneumonia
+Tetracycline Hydrochloride,Acne
+Tetracycline Hydrochloride,Bacterial Infection
+Tetracycline Hydrochloride,Bronchitis
+Tetracycline Hydrochloride,Brucellosis
+Tetracycline Hydrochloride,Chlamydia Infection
+Tetracycline Hydrochloride,Cystitis
+Tetracycline Hydrochloride,Epididymitis - Sexually Transmitted
+Tetracycline Hydrochloride,Gonococcal Infection - Uncomplicated
+Tetracycline Hydrochloride,Helicobacter pylori Infection
+Tetracycline Hydrochloride,Lyme Disease - Arthritis
+Tetracycline Hydrochloride,Lyme Disease - Carditis
+Tetracycline Hydrochloride,Lyme Disease - Erythema Chronicum Migrans
+Tetracycline Hydrochloride,Lyme Disease - Neurologic
+Tetracycline Hydrochloride,Nongonococcal Urethritis
+Tetracycline Hydrochloride,Ornithosis
+Tetracycline Hydrochloride,Pneumonia
+Tetracycline Hydrochloride,Psittacosis
+Tetracycline Hydrochloride,Rickettsial Infection
+Tetracycline Hydrochloride,Syphilis - Early
+Tetracycline Hydrochloride,Syphilis - Latent
+Tetracycline Hydrochloride,Tertiary Syphilis
+Tetracycline Hydrochloride,Upper Respiratory Tract Infection
+Tigecycline,Intraabdominal Infection
+Tigecycline,Pneumonia
+Tigecycline,Skin and Structure Infection
+Tigecycline,Skin or Soft Tissue Infection
+Tigecycline,Trichomoniasis
+Tinidazole,Amebiasis
+Tinidazole,Bacterial Vaginosis
+Tinidazole,Giardiasis
+Tinidazole,Trichomoniasis
+Tobramycin,
+Trimethoprim,Otitis Media
+Trimethoprim,Urinary Tract Infection
+Trimethoprim + Sulphamethoxazole,Bacterial Infection 
+Trimethoprim + Sulphamethoxazole,Bronchitis
+Trimethoprim + Sulphamethoxazole,Cystitis
+Trimethoprim + Sulphamethoxazole,Granuloma Inguinale
+Trimethoprim + Sulphamethoxazole,Meningitis
+Trimethoprim + Sulphamethoxazole,Pneumocystis carinii pneumonia (Prevention)
+Trimethoprim + Sulphamethoxazole,Pneumocystis carinii pneumonia (Treatment)
+Trimethoprim + Sulphamethoxazole,Protozoan Infection
+Trimethoprim + Sulphamethoxazole,Pyelonephritis
+Trimethoprim + Sulphamethoxazole,Shigellosis
+Trimethoprim + Sulphamethoxazole,Toxoplasmosis - Prophylaxis
+Trimethoprim + Sulphamethoxazole,Traveler's Diarrhea
+Trimethoprim + Sulphamethoxazole,Urinary Tract Infection
+Vancomycin,Bacteremia
+Vancomycin,Bacterial Infection
+Vancomycin,CNS Infection
+Vancomycin,Endocarditis
+Vancomycin,Enterocolitis
+Vancomycin,Febrile Neutropenia
+Vancomycin,Head Injury
+Vancomycin,Intraabdominal Infection
+Vancomycin,Meningitis
+Vancomycin,Meningitis - Streptococcus Group B
+Vancomycin,Nosocomial Pneumonia
+Vancomycin,Osteomyelitis
+Vancomycin,Peritonitis
+Vancomycin,Pneumonia
+Vancomycin,Pseudomembranous Colitis
+Vancomycin,Sepsis
+Vancomycin,Shunt Infection
+Vancomycin,Skin or Soft Tissue Infection
+Vancomycin,Surgical Prophylaxis
+lsoniazid,Mycobacterium kansasii
+lsoniazid,Tuberculosis - Active
+lsoniazid,Tuberculosis - Extrapulmonary
+lsoniazid,Tuberculosis - Latent
+lsoniazid,Tuberculosis - Prophylaxis
+lsoniazid,Tuberculous Meningitis

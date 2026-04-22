@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "92975288388",
+    "project_id": "infusion-pump-fl",
+    "storage_bucket": "infusion-pump-fl.firebasestorage.app",
+    "firebase_url": "https://infusion-pump-fl-default-rtdb.firebaseio.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:92975288388:android:d3632e0628e7344c6e2c11",
+        "android_client_info": {
+          "package_name": "com.infusionpump.infusion_pump_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4ZIxMaRqzXCDJwdez8pOXCySrjSLWz5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,289 @@
+generic,min_age_d,max_age_d,min_age_m,max_age_m,min_age_y,max_age_y,min_weight,max_weight,min_dose_dw_mg,max_dose_dw_mg,min_dose_dw_iu,max_dose_dw_iu,limit_mg,limit_iu,min_dose_dd_mg,max_dose_dd_mg,min_dose_dd_UNIT,max_dose_dd_iu,route
+Amikacin,,,,,12,65,,,10,15,,,1500,,,,,,IM
+Amikacin,,,,,12,65,,,10,15,,,1500,,,,,,IV
+Amikacin,,,1,,,11,,,10,15,,,1500,,,,,,IM
+Amikacin,1,29,,,,,,,10,15,,,1500,,,,,,IM
+Amikacin,,,1,,,11,,,10,15,,,1500,,,,,,IV
+Amikacin,1,29,,,,,,,10,15,,,1500,,,,,,IV
+Amoxicillin,,,,,12,120,,,,,,,,,500,2000,,,PO
+Amoxicillin,,,1,,,11,,,30,90,,,,,,,,,PO
+Amoxicillin,1,29,,,,,,,20,75,,,,,,,,,PO
+Amoxicillin  + Clavulanic Acid,,,,,12,120,,,,,,,,,500,1750,,,PO
+Amoxicillin  + Clavulanic Acid,,,1,,,11,,,15,45,,,1500,,,,,,PO
+Amphotericin B,,,,,12,120,,,0.25,1.5,,,,,,,,,IV
+Amphotericin B,,,1,,,11,,,0.25,1.5,,,,,,,,,IV
+Ampicillin,,,,,12,120,,,,,,,,,2000,12000,,,IM
+Ampicillin,,,,,12,120,,,,,,,,,2000,12000,,,IV
+Ampicillin,,,,,12,120,,,,,,,,,1000,2000,,,PO
+Ampicillin,,,1,,,11,,,25,50,,,,,,,,,IM
+Ampicillin,1,29,,,,,,,100,150,,,,,,,,,IM
+Ampicillin,,,1,,,11,,,25,50,,,,,,,,,IV
+Ampicillin,1,29,,,,,,,100,150,,,,,,,,,IV
+Ampicillin,,,1,,,11,,,25,50,,,,,,,,,PO
+Artesunate,,,,,12,120,,,,,,,,,100,200,,,PO
+Artesunate,,,,,12,120,,,,,,,,,100,200,,,IV
+Azithromycin,,,,,12,120,,,,,,,,,250,500,,,IV
+Azithromycin,,,,,12,120,,,,,,,,,250,500,,,PO
+Azithromycin,,,1,,,11,,,5,10,,,,,,,,,IM
+Azithromycin,,,1,,,11,,,5,10,,,,,,,,,IV
+Azithromycin,,,1,,,11,,,5,10,,,,,,,,,PO
+Aztreonam,,,,,18,120,,,,,,,,,2000,6000,,,IV
+Aztreonam,,,1,,,18,,,90,120,,,,,,,,,IV
+Aztreonam,1,29,,,,,,,90,120,,,,,,,,,IV
+Benzathine Penicillin,,,,,12,120,,,,,50000,100000,,2400000,,,,,IM
+Benzathine Penicillin,,,1,,,11,,,,,50000,100000,,2400000,,,,,IM
+Benzathine Penicillin,1,29,,,,,,,,,50000,100000,,2400000,,,,,IM
+Benzyl Penicillin,,,,,12,120,,,,,,,,,600,14000,,,IV
+Benzyl Penicillin,,,1,,,11,,,120,150,,,,,,,,,IM
+Benzyl Penicillin,1,29,,,,,,,50,100,,,,,,,,,IM
+Benzyl Penicillin,,,1,,,11,,,120,150,,,,,,,,,IV
+Benzyl Penicillin,1,29,,,,,,,50,100,,,,,,,,,IV
+Benzyl Penicillin+  Procaine Penicillin,,,,,12,120,,,,,,,,,600,1200,,,IM
+Benzyl Penicillin+  Procaine Penicillin,,,1,,,11,,13.55,,,,,,,600,900,,,IM
+Benzyl Penicillin+  Procaine Penicillin,,,1,,,11,27.26,,,,,,,,1200,2400,,,IM
+Benzyl Penicillin+  Procaine Penicillin,,,1,,,11,13.56,27.25,,,,,,,900,1200,,,IM
+Cefaclor,,,,,12,120,,,,,,,,,750,1000,,,PO
+Cefaclor,,,1,,,11,,,20,40,,,,,,,,,PO
+Cefadroxil,,,,,12,120,,,,,,,,,1000,2000,,,PO
+Cefadroxil,,,1,,,11,,,30,45,,,,,,,,,PO
+Cefazolin,,,,,12,120,,,,,,,,,1500,6000,,,IM
+Cefazolin,,,,,12,120,,,,,,,,,1500,6000,,,IV
+Cefazolin,,,1,,,11,,,50,150,,,,,,,,,IM
+Cefazolin,1,29,,,,,,,50,75,,,,,,,,,IM
+Cefazolin,,,1,,,11,,,50,150,,,,,,,,,IV
+Cefazolin,1,29,,,,,,,50,75,,,,,,,,,IV
+Cefdinir,,,,,12,120,,,,,,,,,600,900,,,PO
+Cefdinir,,,6,,,11,,,14,21,,,600,,,,,,PO
+Cefditoren,,,,,12,120,,,,,,,,,400,800,,,PO
+Cefepime,,,,,12,120,,,,,,,,,1000,6000,,,IV
+Cefepime,,,1,,,11,,,100,150,,,6000,,,,,,IV
+Cefepime,1,29,,,,,,,60,100,,,,,,,,,IV
+Cefetamet  Pivoxil Hydrochloride,,,,,12,120,,,,,,,,,1000,1500,,,PO
+Cefetamet  Pivoxil Hydrochloride,,,1,,,11,,,20,,,,30,,,,,,PO
+Cefixime,,,,,12,120,,,,,,,,,400,600,,,PO
+Cefixime,,,6,,,11,44.6,,,,,,,,400,600,,,PO
+Cefixime,,,6,,,11,,44.5,8,12,,,400,,,,,,PO
+Cefoperazone,,,,,18,120,,,,,,,,,2000,6000,,,IM
+Cefoperazone,,,,,18,120,,,,,,,,,2000,6000,,,IV
+Cefotaxime,,,,,12,120,,,,,,,,,2000,4000,,,IM
+Cefotaxime,,,,,12,120,,,,,,,,,2000,4000,,,IV
+Cefotaxime,,,1,,,11,,,100,150,,,,,,,,,IM
+Cefotaxime,1,29,,,,,,,50,150,,,,,,,,,IM
+Cefotaxime,,,1,,,11,,,100,150,,,,,,,,,IV
+Cefotaxime,1,29,,,,,,,50,150,,,,,,,,,IV
+Cefoxitin,,,,,12,120,,,,,,,,,2000,8000,,,IV
+Cefoxitin,,,3,,,11,,,80,160,,,12000,,,,,,IV
+Cefpirome,,,,,12,120,,,,,,,,,2000,4000,,,IV
+Cefpirome,,,3,,,11,,,50,100,,,,,,,,,IV
+Cefpodoxime,,,,,12,120,,,,,,,,,200,800,,,PO
+Cefpodoxime,,,2,,,11,,,10,15,,,200,,,,,,PO
+Cefpodoxime  + Clavulanic Acid,,,,,12,120,,,,,,,,,200,800,,,PO
+Cefpodoxime  + Clavulanic Acid,,,2,,,11,,,10,15,,,200,,,,,,PO
+Cefprozil,,,,,12,120,,,,,,,,,500,1000,,,PO
+Cefprozil,,,2,,,11,,,15,22.5,,,200,,,,,,PO
+Ceftazidime,,,,,12,120,,,,,,,,,500,6000,,,IV
+Ceftazidime,,,1,,,11,,,90,200,,,6000,,,,,,IV
+Ceftazidime,1,29,,,,,,,60,150,,,,,,,,,IV
+Ceftibuten,,,,,12,120,,,,,,,,,400,800,,,PO
+Ceftibuten,,,6,,,11,,,9,18,,,400,,,,,,PO
+Ceftriaxone,,,,,12,120,,,,,,,,,1000,4000,,,IM
+Ceftriaxone,,,,,12,120,,,,,,,,,1000,2000,,,IV
+Ceftriaxone,,,1,,,11,,,50,75,,,2000,,,,,,IM
+Ceftriaxone,1,29,,,,,,,25,50,,,,,,,,,IM
+Ceftriaxone,,,1,,,11,,,50,75,,,2000,,,,,,IV
+Ceftriaxone,1,29,,,,,,,25,50,,,,,,,,,IV
+Cefuroxime,,,,,13,120,,,,,,,,,2250,4500,,,IM
+Cefuroxime,,,,,13,120,,,,,,,,,2250,4500,,,IV
+Cefuroxime,,,,,13,120,,,,,,,,,500,1000,,,PO
+Cefuroxime,,,3,,,11,,,50,150,,,6000,,,,,,IM
+Cefuroxime,,,3,,,11,,,50,150,,,6000,,,,,,IV
+Cefuroxime,,,3,,,11,,,20,30,,,1000,,,,,,PO
+Cefuroxime + Clavulanic Acid,,,,,13,120,,,,,,,,,500,1000,,,PO
+Cefuroxime + Clavulanic Acid,,,3,,,11,,,50,100,,,6000,,,,,,IM
+Cefuroxime + Clavulanic Acid,,,3,,,11,,,50,100,,,6000,,,,,,IV
+Cefuroxime + Clavulanic Acid,,,3,,,11,,,30,45,,,1000,,,,,,PO
+Cephalexin,,,,,12,120,,,,,,,,,500,3000,,,PO
+Cephalexin,,,1,,,11,,,25,150,,,,,,,,,PO
+Cephradine,,,,,12,120,,,,,,,,,1000,1500,,,PO
+Cephradine,,,9,,,11,,,25,50,,,4000,,,,,,PO
+Chloramphenicol,,,,,12,120,,,50,100,,,4000,,,,,,IV
+Chloramphenicol,,,1,,,11,,,50,100,,,,,,,,,IV
+Chloramphenicol,1,29,,,,,,,25,50,,,,,,,,,IV
+Ciprofloxacin,,,,,12,120,,,,,,,,,400,800,,,IV
+Ciprofloxacin,,,,,12,120,,,,,,,,,500,1500,,,PO
+Ciprofloxacin,,,1,,,11,,,20,30,,,1200,,,,,,IV
+Ciprofloxacin,1,29,,,,,,,20,30,,,,,,,,,IV
+Ciprofloxacin,,,1,,,11,,,20,40,,,1200,,,,,,PO
+Ciprofloxacin,1,29,,,,,,,20,30,,,,,,,,,PO
+Ciprofloxacin Hydrochloride,,,,,12,120,,,,,,,,,400,800,,,IV
+Ciprofloxacin Hydrochloride,,,,,12,120,,,,,,,,,500,1500,,,PO
+Ciprofloxacin Hydrochloride,,,1,,,11,,,20,30,,,1200,,,,,,IV
+Ciprofloxacin Hydrochloride,1,29,,,,,,,20,30,,,,,,,,,IV
+Ciprofloxacin Hydrochloride,,,1,,,11,,,20,40,,,1200,,,,,,PO
+Ciprofloxacin Hydrochloride,1,29,,,,,,,20,30,,,,,,,,,PO
+Clarithromycin,,,,,12,120,,,,,,,,,500,1000,,,PO
+Clarithromycin,,,1,,,11,,,15,22.5,,,1000,,,,,,PO
+Clindamycin,,,,,12,120,,,,,,,,,600,1800,,,PO
+Clindamycin,,,,,12,120,,,,,,,,,900,3600,,,IV
+Clindamycin,,,1,,,11,,,10,30,,,,,,,,,PO
+Clindamycin,,,1,,,11,,,25,40,,,,,,,,,IV
+Clindamycin,,,1,,,11,,,25,40,,,,,,,,,IM
+Cloxacillin,,,,,18,120,,,,,,,,,1000,2000,,,PO
+Dapsone,,,,,12,120,,,,,,,,,50,300,,,PO
+Dapsone,,,1,,,11,,,1,2,,,,,,,,,PO
+Demeclocycline Hydrochloride,,,,,12,120,,,,,,,,,600,900,,,PO
+Demeclocycline Hydrochloride,,,,,8,11,,,7,13,,,600,,600,900,,,PO
+Dicloxacillin,,,,,12,120,,,,,,,,,500,2000,,,PO
+Dicloxacillin,,,1,,,11,,,25,50,,,,,,,,,PO
+Dicloxacillin,,,1,,,11,,,,,,,,,1000,2000,,,PO
+Doripenem,,,,,18,120,,,,,,,,,1500,3000,,,IV
+Doxycycline,,,,,12,120,,,,,,,,,100,200,,,IV
+Doxycycline,,,,,12,120,,,,,,,,,100,200,,,PO
+Doxycycline,,,1,,,11,,,2,4,,,,,,,,,IV
+Doxycycline,,,1,,,11,,,2,4,,,,,,,,,PO
+Ertapenem,,,,,12,120,,,,,,,,,1000,2000,,,IM
+Ertapenem,,,,,12,120,,,,,,,,,1000,2000,,,IV
+Ertapenem,,,3,,,11,,,20,45,,,1000,,,,,,IM
+Ertapenem,,,3,,,11,,,20,45,,,1000,,,,,,IV
+Erythromycin,,,,,12,120,,,,,,,,,1000,4000,,,IV
+Erythromycin,,,,,12,120,,,,,,,,,1000,2000,,,PO
+Erythromycin,,,1,,,11,,,15,20,,,4000,,,,,,IV
+Erythromycin,1,29,,,,,,,40,50,,,,,,,,,IV
+Erythromycin,,,1,,,11,,,10,20,,,1000,,,,,,PO
+Erythromycin,1,29,,,,,,,40,50,,,4000,,,,,,PO
+Ethambutol,,,,,13,120,,,15,25,,,2500,,,,,,PO
+Flucloxacillin,,,,,12,120,,,,,,,,,1000,2000,,,IM
+Flucloxacillin,,,,,12,120,,,,,,,,,1000,4000,,,IV
+Flucloxacillin,,,,,12,120,,,,,,,,,1000,2000,,,PO
+Flucloxacillin,,,,,2,11,,,,,,,,,500,1000,,,IM
+Flucloxacillin,,,,,2,11,,,,,,,,,500,2000,,,IV
+Flucloxacillin,,,,,2,11,,,,,,,,,500,1000,,,PO
+Flucloxacillin,29,,,,,2,,,,,,,,,250,500,,,IM
+Flucloxacillin,29,,,,,2,,,,,,,,,250,100,,,IV
+Flucloxacillin,29,,,,,2,,,,,,,,,250,500,,,PO
+Fosfomycin,,,,,12,120,,,,,,,,,12000,16000,,,IV
+Fosfomycin,,,,,1,11,,,200,400,,,,,,,,,IV
+Fosfomycin,29,,,,,1,,,200,300,,,,,,,,,IV
+Fosfomycin,1,29,,,,,,,200,266.67,,,,,,,,,IV
+Fusidic Acid,,,,,12,120,,,,,,,,,1500,2000,,,IM
+Fusidic Acid,,,,,12,120,,,,,,,,,1500,2000,,,IV
+Fusidic Acid,,,,,12,120,,,,,,,,,1500,2000,,,PO
+Fusidic Acid,,,,,1,11,,,20,26.67,,,,,,,,,IM
+Fusidic Acid,,,,,1,11,,,20,26.67,,,,,,,,,IV
+Fusidic Acid,,,,,1,11,,,20,26.67,,,,,,,,,PO
+Gemifloxacin,,,,,18,120,,,,,,,,,360,640,,,PO
+Gentamicin,,,,,12,120,0,39.99,4,5,,,200,,,,,,IM
+Gentamicin,,,,,12,120,40,49.5,,,,,,,160,240,,,IM
+Gentamicin,,,,,12,120,49.6,59.5,,,,,,,200,280,,,IM
+Gentamicin,,,,,12,120,59.6,69.5,,,,,,,240,320,,,IM
+Gentamicin,,,,,12,120,69.6,79.5,,,,,,,320,360,,,IM
+Gentamicin,,,,,12,120,79.6,,,,,,,,360,400,,,IM
+Gentamicin,,,,,12,120,0,39.99,4,5,,,200,,,,,,IV
+Gentamicin,,,,,12,120,40,49.5,,,,,,,160,240,,,IV
+Gentamicin,,,,,12,120,49.6,59.5,,,,,,,200,280,,,IV
+Gentamicin,,,,,12,120,59.6,69.5,,,,,,,240,320,,,IV
+Gentamicin,,,,,12,120,69.6,79.5,,,,,,,320,360,,,IV
+Gentamicin,,,,,12,120,79.6,,,,,,,,360,400,,,IV
+Gentamicin,,,1,,,11,,,4.5,7.5,,,,,,,,,IM
+Gentamicin,1,29,,,,,,,5,7.5,,,,,,,,,IM
+Gentamicin,,,1,,,11,,,4.5,7.5,,,,,,,,,IV
+Gentamicin,1,29,,,,,,,5,7.5,,,,,,,,,IV
+Imipenem  + Cilastatin,,,1,3,,,,,100,125,,,4000,,,,,,IV
+Imipenem  + Cilastatin,,,3,,,11,,,60,100,,,4000,,,,,,IV
+Imipenem  + Cilastatin,1,29,,,,,,,50,75,,,4000,,,,,,IV
+Imipenem + Cilastatin,,,,,12,120,,,,,,,,,2000,3000,,,IV
+Isoniazid  + Thiacetazone,,,,,12,120,,,,,,,,,300,600,,,IM
+Isoniazid  + Thiacetazone,,,,,12,120,,,,,,,,,300,600,,,PO
+Isoniazid  + Thiacetazone,,,1,,,11,,,10,20,,,300,,,,,,IM
+Isoniazid  + Thiacetazone,,,1,,,11,,,10,15,,,300,,,,,,PO
+Levofloxacin,,,,,12,120,,,,,,,,,250,750,,,IV
+Levofloxacin,,,,,12,120,,,,,,,,,250,750,,,PO
+Levofloxacin,,,6,,,11,,,16,24,,,,,,,,,IV
+Levofloxacin,,,6,,,11,,,16,24,,,,,,,,,PO
+Linezolid,,,,,12,120,,,,,,,,,600,1200,,,IV
+Linezolid,,,,,12,120,,,,,,,,,600,1200,,,PO
+Linezolid,8,,,,,11,,,30,40,,,,,,,,,IV
+Linezolid,1,7,,,,,,,20,30,,,,,,,,,IV
+Linezolid,8,,,,,11,,,30,40,,,,,,,,,PO
+Linezolid,1,7,,,,,,,20,30,,,,,,,,,PO
+Lomefloxacin,,,,,18,120,,,,,,,,,400,800,,,PO
+lsoniazid,,,,,12,120,,,5,10,,,300,,,,,,IM
+lsoniazid,,,,,12,120,,,5,10,,,300,,,,,,IV
+lsoniazid,,,,,12,120,,,5,10,,,300,,,,,,PO
+lsoniazid,,,1,,,11,,,10,15,,,300,,,,,,IM
+lsoniazid,,,1,,,11,,,10,15,,,300,,,,,,IV
+lsoniazid,,,1,,,11,,,10,15,,,300,,,,,,PO
+Lymecycline,,,,,12,120,,,,,,,,,408,812,,,PO
+Meropenem,,,,,12,120,,,,,,,,,1500,3000,,,IV
+Meropenem,,,3,,,11,,,30,40,,,1500,,,,,,IV
+Metronidazole,,,,,12,120,,,,,,,,,500,4000,,,IV
+Metronidazole,,,,,12,120,,,,,,,,,500,2000,,,PO
+Metronidazole,,,1,,,11,,,22.5,40,,,,,,,,,IV
+Metronidazole,1,29,,,,,,,7.5,15,,,,,,,,,IV
+Metronidazole,,,1,,,11,,,15,30,,,2000,,,,,,PO
+Moxifloxacin,,,,,12,120,,,,,,,,,400,800,,,IV
+Moxifloxacin,,,,,12,120,,,,,,,,,400,800,,,PO
+Moxifloxacin,,,3,,,11,,,8,12,,,,,,,,,IV
+Moxifloxacin,1,29,,,,,,,5,10,,,,,,,,,IV
+Nitrofurantoin,,,,,12,120,,,,,,,,,50,200,,,PO
+Nitrofurantoin,,,1,,,11,,,1,5,,,400,,,,,,PO
+Nitrofurantoin + Nitrofurantoin Microcrystals,,,,,12,120,,,,,,,,,50,200,,,PO
+Nystatin,,,,,18,120,,,,,,,,,,,1500000,3000000,PO
+Nystatin,,,,,1,18,,,,,,,,,,,1600000,2400000,PO
+Nystatin,29,,,,,1,,,,,,,,,,,400000,800000,PO
+Ofloxacin,,,,,18,120,,,,,,,,,400,800,,,PO
+Ofloxacin,,,,,18,120,,,,,,,,,400,800,,,IV
+Ornidazole,,,,,12,120,,,,,,,,,500,1500,,,PO
+Ornidazole,,,1,,,11,,,10,25,,,,,,,,,PO
+Oxytetracycline,,,,,12,120,,,,,,,,,1000,2000,,,PO
+Pefloxacin,,,,,12,120,,,,,,,,,800,1200,,,PO
+Phenoxymethyl  Penicillin,,,,,12,120,,,,,,,,,1000,2000,,,PO
+Phenoxymethyl  Penicillin,,,,,1,11,,,,,,,,,500,1000,,,PO
+Phenoxymethyl  Penicillin,29,,,,,1,,,,,,,,,250,500,,,PO
+Piperacillin + Tazobactam,,,,,12,120,,,,,,,,,13500,16875,,,IV
+Piperacillin + Tazobactam,,,9,,,11,39.6,,,,,,,,13500,16875,,,IV
+Piperacillin + Tazobactam,,,9,,,11,,39.5,337.5,450,,,,,,,,,IV
+Piperacillin + Tazobactam,,,2,9,,,,,80,160,,,,,,,,,IV
+Piperacillin + Tazobactam,1,29,,,,,,,200,300,,,24000,,,,,,IV
+Pivmecillinam,,,,,12,120,,,,,,,,,400,600,,,PO
+Pivmecillinam,,,1,,,11,,,20,40,,,,,,,,,PO
+Pyrazinamide,,,,,12,120,,,,,,,,,1000,2000,,,PO
+Pyrazinamide,,,1,,,11,,,15,40,,,,,,,,,PO
+Rifampicin,,,,,12,120,,,,,,,,,300,900,,,IV
+Rifampicin,,,,,12,120,,,,,,,,,300,900,,,PO
+Rifampicin,,,1,,,11,,,20,30,,,,,,,,,IV
+Rifampicin,1,29,,,,,,,10,20,,,600,,,,,,IV
+Rifampicin,,,1,,,11,,,10,20,,,600,,,,,,PO
+Rifampicin,1,29,,,,,,,10,20,,,600,,,,,,PO
+Rifaximin,,,,,12,120,,,,,,,,,600,1200,,,PO
+Rifaximin,,,,,3,11,,,,,,,,,200,600,,,PO
+Roxithromycin,,,,,12,120,,,,,,,,,300,450,,,PO
+Roxithromycin,,,1,,,11,,,5,8,,,,,,,,,PO
+Secnidazole,,,,,12,120,,,,,,,,,2000,4000,,,PO
+Sparfloxacin,,,,,18,120,,,,,,,,,200,400,,,PO
+Streptomycin,,,,,12,120,,,,,,,,,500,1000,,,IM
+Streptomycin,,,,,12,120,,,,,,,,,500,1000,,,IV
+Streptomycin,,,1,,,11,,,15,30,,,2000,,,,,,IM
+Tedizolid Phosphate,,,,,12,120,,,,,,,,,200,400,,,PO
+Tedizolid Phosphate,,,,,12,120,,,,,,,,,200,400,,,IV
+Teicoplanin,,,,,12,120,,,6,12,,,,,,,,,IV
+Teicoplanin,,,,,12,120,,,,,,,,,200,400,,,PO
+Teicoplanin,,,2,,,11,,,6,20,,,,,,,,,IV
+Tetracycline Hydrochloride,,,,,12,120,,,,,,,,,1000,2000,,,PO
+Tetracycline Hydrochloride,,,,,8,11,,,25,50,,,,,,,,,PO
+Tigecycline,,,,,12,120,,,,,,,,,50,100,,,IV
+Tigecycline,,,,,12,120,,,,,,,,,50,100,,,PO
+Tigecycline,,,,,8,11,,,2.4,3.6,,,100,,,,,,IV
+Tinidazole,,,,,12,120,,,,,,,,,1000,2000,,,PO
+Tinidazole,,,,,3,11,,,50,100,,,2000,,,,,,PO
+Tobramycin,,,,,12,120,,,3,7,,,,,,,,,IV
+Trimethoprim,,,,,12,120,,,,,,,,,50,100,,,PO
+Trimethoprim + Sulphamethoxazole,,,,,12,120,,,,,,,,,80,320,,,PO
+Trimethoprim + Sulphamethoxazole,,,,,12,120,,,,,,,,,80,320,,,IV
+Trimethoprim + Sulphamethoxazole,,,2,,,11,,,,,,,,,80,320,,,PO
+Trimethoprim + Sulphamethoxazole,,,2,,,11,,,,,,,,,80,320,,,IV
+Vancomycin,,,,,18,120,,,,,,,,,500,2500,,,IV
+Vancomycin,,,,,18,120,,,,,,,,,500,2000,,,PO
+Vancomycin,,,1,,,18,,,30,40,,,,,,,,,IV
+Vancomycin,1,29,,,,,,,10,15,,,,,,,,,IV
+Vancomycin,,,1,,,18,,,30,40,,,,,,,,,PO

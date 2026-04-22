@@ -1,0 +1,99 @@
+generic,r_category
+Amikacin,D
+Amikacin,D
+Amoxicillin,B
+Amoxicillin  + Clavulanic Acid,B
+Amphotericin B,B
+Ampicillin,B
+Artemether,C
+Artemether + Lumefantrine,C
+Artesunate,Unknown
+Azithromycin,B
+Aztreonam,B
+Benzathine Penicillin,B
+Benzyl Penicillin,B
+Benzyl Penicillin+  Procaine Penicillin,B
+Cefaclor,B
+Cefadroxil,B
+Cefazolin,B
+Cefdinir,B
+Cefditoren,B
+Cefepime,B
+Cefetamet Pivoxil Hydrochloride,Unknown
+Cefixime,B
+Cefoperazone,B
+Cefotaxime,B
+Cefoxitin,B
+Cefpirome,Unknown
+Cefpodoxime,B
+Cefpodoxime  + Clavulanic Acid,B
+Cefprozil,B
+Ceftazidime,B
+Ceftibuten,B
+Ceftriaxone,B
+Cefuroxime,B
+Cefuroxime + Clavulanic Acid,B
+Cephalexin,B
+Cephradine,B
+Chloramphenicol,C
+Ciprofloxacin,C
+Ciprofloxacin Hydrochloride,C
+Clarithromycin,C
+Clindamycin,B
+Clindamycin  + Anhydrous Benzoyl Peroxide,B
+Cloxacillin,B
+Dapsone,C
+Demeclocycline Hydrochloride,D
+Dicloxacillin,B
+Doripenem,B
+Doxycycline,D
+Ertapenem,B
+Erythromycin,B
+Ethambutol,B
+Ethambutol + Isoniazid + Pyrazinamide  + Rifampicin,Unknown
+Flucloxacillin,B
+Fosfomycin,B
+Fusidic Acid,C
+Gemifloxacin,C
+Gentamicin,D
+Imipenem  + Cilastatin,Not Assigned
+Isoniazid  +  Rifampicin,C
+Isoniazid  + Thiacetazone,C
+Isoniazid + Pyrazinamide + Rifampicin,C
+Levofloxacin,C
+Linezolid,C
+Lomefloxacin,C
+lsoniazid,C
+Lymecycline,D
+Meropenem,B
+Metronidazole,B
+Moxifloxacin,C
+Nalidixic Acid,C
+Nitrofurantoin,B
+Nitrofurantoin Microcrystals + Nitrofurantoin ,B
+Nystatin,C
+Ofloxacin,C
+Ornidazole,C
+Oxytetracycline,D
+Pefloxacin,C
+Phenoxymethyl  Penicillin,B
+Piperacillin + Tazobactam,B
+Pivmecillinam,B
+Pyrazinamide,C
+Rifampicin,C
+Rifaximin,C
+Roxithromycin,D
+Secnidazole,Not Assigned
+Sparfloxacin,C
+Spectinomycin,B
+Spiramycine,B
+Streptomycin,D
+Tedizolid Phosphate,C
+Teicoplanin,B
+Tetracycline Hydrochloride,D
+Tigecycline,Unknown
+Tinidazole,C
+Tobramycin,D
+Trimethoprim,C
+Trimethoprim + Sulphamethoxazole,D
+Vancomycin,B

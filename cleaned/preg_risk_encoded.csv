@@ -1,0 +1,98 @@
+generic,r_category,r_category_label
+Amikacin,D,3
+Amoxicillin,B,1
+Amoxicillin  + Clavulanic Acid,B,1
+Amphotericin B,B,1
+Ampicillin,B,1
+Artemether,C,2
+Artemether + Lumefantrine,C,2
+Artesunate,Unknown,5
+Azithromycin,B,1
+Aztreonam,B,1
+Benzathine Penicillin,B,1
+Benzyl Penicillin,B,1
+Benzyl Penicillin+  Procaine Penicillin,B,1
+Cefaclor,B,1
+Cefadroxil,B,1
+Cefazolin,B,1
+Cefdinir,B,1
+Cefditoren,B,1
+Cefepime,B,1
+Cefetamet Pivoxil Hydrochloride,Unknown,5
+Cefixime,B,1
+Cefoperazone,B,1
+Cefotaxime,B,1
+Cefoxitin,B,1
+Cefpirome,Unknown,5
+Cefpodoxime,B,1
+Cefpodoxime  + Clavulanic Acid,B,1
+Cefprozil,B,1
+Ceftazidime,B,1
+Ceftibuten,B,1
+Ceftriaxone,B,1
+Cefuroxime,B,1
+Cefuroxime + Clavulanic Acid,B,1
+Cephalexin,B,1
+Cephradine,B,1
+Chloramphenicol,C,2
+Ciprofloxacin,C,2
+Ciprofloxacin Hydrochloride,C,2
+Clarithromycin,C,2
+Clindamycin,B,1
+Clindamycin  + Anhydrous Benzoyl Peroxide,B,1
+Cloxacillin,B,1
+Dapsone,C,2
+Demeclocycline Hydrochloride,D,3
+Dicloxacillin,B,1
+Doripenem,B,1
+Doxycycline,D,3
+Ertapenem,B,1
+Erythromycin,B,1
+Ethambutol,B,1
+Ethambutol + Isoniazid + Pyrazinamide  + Rifampicin,Unknown,5
+Flucloxacillin,B,1
+Fosfomycin,B,1
+Fusidic Acid,C,2
+Gemifloxacin,C,2
+Gentamicin,D,3
+Imipenem  + Cilastatin,Not Assigned,6
+Isoniazid  +  Rifampicin,C,2
+Isoniazid  + Thiacetazone,C,2
+Isoniazid + Pyrazinamide + Rifampicin,C,2
+Levofloxacin,C,2
+Linezolid,C,2
+Lomefloxacin,C,2
+lsoniazid,C,2
+Lymecycline,D,3
+Meropenem,B,1
+Metronidazole,B,1
+Moxifloxacin,C,2
+Nalidixic Acid,C,2
+Nitrofurantoin,B,1
+Nitrofurantoin Microcrystals + Nitrofurantoin ,B,1
+Nystatin,C,2
+Ofloxacin,C,2
+Ornidazole,C,2
+Oxytetracycline,D,3
+Pefloxacin,C,2
+Phenoxymethyl  Penicillin,B,1
+Piperacillin + Tazobactam,B,1
+Pivmecillinam,B,1
+Pyrazinamide,C,2
+Rifampicin,C,2
+Rifaximin,C,2
+Roxithromycin,D,3
+Secnidazole,Not Assigned,6
+Sparfloxacin,C,2
+Spectinomycin,B,1
+Spiramycine,B,1
+Streptomycin,D,3
+Tedizolid Phosphate,C,2
+Teicoplanin,B,1
+Tetracycline Hydrochloride,D,3
+Tigecycline,Unknown,5
+Tinidazole,C,2
+Tobramycin,D,3
+Trimethoprim,C,2
+Trimethoprim + Sulphamethoxazole,D,3
+Vancomycin,B,1
