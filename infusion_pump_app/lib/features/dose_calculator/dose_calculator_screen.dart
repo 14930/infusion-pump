@@ -4,8 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../core/theme/app_theme.dart';
 import '../../core/widgets/connection_indicator.dart';
-import '../../core/utils/validators.dart';
 import '../../core/utils/debouncer.dart';
+import '../../core/utils/validators.dart';
+import '../../shared/models/drug_library_entry.dart';
+import '../../shared/providers/drug_library_providers.dart';
 import '../../shared/providers/firebase_providers.dart';
 
 /// Screen 4 - Auto Dose Calculator
@@ -21,19 +23,24 @@ class DoseCalculatorScreen extends ConsumerStatefulWidget {
 class _DoseCalculatorScreenState extends ConsumerState<DoseCalculatorScreen> {
   final _formKey = GlobalKey<FormState>();
   final _weightController = TextEditingController();
+  final _ageController = TextEditingController();
   final _concentrationController = TextEditingController();
   final _doseController = TextEditingController();
   final _debouncer = Debouncer(milliseconds: 300);
 
-  String _selectedDrug = '';
+  String _selectedDrug = 'Other';
   String _selectedUnit = 'mcg/kg/min';
+  AgeUnit _selectedAgeUnit = AgeUnit.years;
   double? _calculatedRate;
+  double? _enteredDailyDoseMg;
   bool _isSending = false;
-  String? _warningMessage;
+  String? _infoMessage;
+  bool _deliveryBlocked = false;
 
   @override
   void dispose() {
     _weightController.dispose();
+    _ageController.dispose();
     _concentrationController.dispose();
     _doseController.dispose();
     _debouncer.dispose();
@@ -43,7 +50,20 @@ class _DoseCalculatorScreenState extends ConsumerState<DoseCalculatorScreen> {
   @override
   Widget build(BuildContext context) {
     final connectionAsync = ref.watch(connectionProvider);
+    final ivDrugNamesAsync = ref.watch(ivDrugNamesProvider);
     final isConnected = connectionAsync.valueOrNull ?? false;
+    final ivDrugs = ivDrugNamesAsync.valueOrNull ?? const <String>[];
+    final drugOptions = ['Other', ...ivDrugs];
+
+    if (!drugOptions.contains(_selectedDrug)) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) {
+          setState(() {
+            _selectedDrug = 'Other';
+          });
+        }
+      });
+    }
 
     return Scaffold(
       backgroundColor: Colors.transparent,
@@ -61,7 +81,7 @@ class _DoseCalculatorScreenState extends ConsumerState<DoseCalculatorScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Drug autocomplete
+              // IV-only drug library selection
               const Text(
                 'DRUG SELECTION',
                 style: TextStyle(
@@ -72,70 +92,38 @@ class _DoseCalculatorScreenState extends ConsumerState<DoseCalculatorScreen> {
                 ),
               ),
               const SizedBox(height: 8),
-              Autocomplete<DrugReference>(
-                optionsBuilder: (textEditingValue) {
-                  if (textEditingValue.text.isEmpty) {
-                    return _drugReferences;
-                  }
-                  return _drugReferences.where((drug) => drug.name
-                      .toLowerCase()
-                      .contains(textEditingValue.text.toLowerCase()));
-                },
-                displayStringForOption: (drug) => drug.name,
-                onSelected: (drug) {
-                  setState(() {
-                    _selectedDrug = drug.name;
-                    _selectedUnit = drug.unit;
-                    _concentrationController.text =
-                        drug.standardConcentration.toString();
-                  });
-                },
-                fieldViewBuilder:
-                    (context, controller, focusNode, onEditingComplete) {
-                  return TextFormField(
-                    controller: controller,
-                    focusNode: focusNode,
-                    onEditingComplete: onEditingComplete,
-                    validator: Validators.required,
-                    decoration: const InputDecoration(
-                      labelText: 'Drug Name',
-                      hintText: 'Search for a drug...',
-                      prefixIcon: Icon(Icons.medication_rounded,
-                          color: AppTheme.muted, size: 20),
-                    ),
-                  );
-                },
-                optionsViewBuilder: (context, onSelected, options) {
-                  return Align(
-                    alignment: Alignment.topLeft,
-                    child: Material(
-                      color: AppTheme.surface,
-                      borderRadius: BorderRadius.circular(12),
-                      elevation: 8,
-                      child: ConstrainedBox(
-                        constraints: const BoxConstraints(maxHeight: 250),
-                        child: ListView.builder(
-                          padding: EdgeInsets.zero,
-                          shrinkWrap: true,
-                          itemCount: options.length,
-                          itemBuilder: (context, index) {
-                            final drug = options.elementAt(index);
-                            return ListTile(
-                              title: Text(drug.name,
-                                  style: const TextStyle(
-                                      color: AppTheme.onSurface)),
-                              subtitle: Text(
-                                  '${drug.doseRange} ${drug.unit}',
-                                  style: const TextStyle(
-                                      color: AppTheme.muted, fontSize: 12)),
-                              onTap: () => onSelected(drug),
-                            );
-                          },
+              ivDrugNamesAsync.when(
+                loading: () =>
+                    const LinearProgressIndicator(color: AppTheme.primary),
+                error: (err, _) => Text(
+                  'Unable to load drug library: $err',
+                  style: const TextStyle(color: AppTheme.error),
+                ),
+                data: (_) => DropdownButtonFormField<String>(
+                  initialValue: _selectedDrug,
+                  dropdownColor: AppTheme.surface,
+                  decoration: const InputDecoration(
+                    labelText: 'IV Drug (Library)',
+                    prefixIcon: Icon(Icons.medication_rounded,
+                        color: AppTheme.muted, size: 20),
+                  ),
+                  items: drugOptions
+                      .map(
+                        (drug) => DropdownMenuItem<String>(
+                          value: drug,
+                          child: Text(drug),
                         ),
-                      ),
-                    ),
-                  );
-                },
+                      )
+                      .toList(),
+                  onChanged: (value) {
+                    if (value == null) return;
+                    setState(() {
+                      _selectedDrug = value;
+                      _infoMessage = null;
+                      _deliveryBlocked = false;
+                    });
+                  },
+                ),
               ),
               const SizedBox(height: 16),
 
@@ -151,6 +139,50 @@ class _DoseCalculatorScreenState extends ConsumerState<DoseCalculatorScreen> {
                   prefixIcon: Icon(Icons.monitor_weight_outlined,
                       color: AppTheme.muted, size: 20),
                 ),
+              ),
+              const SizedBox(height: 16),
+
+              // Patient age for library validation
+              Row(
+                children: [
+                  Expanded(
+                    flex: 2,
+                    child: TextFormField(
+                      controller: _ageController,
+                      keyboardType:
+                          const TextInputType.numberWithOptions(decimal: true),
+                      validator: _validateAge,
+                      decoration: const InputDecoration(
+                        labelText: 'Patient Age',
+                        prefixIcon: Icon(Icons.cake_outlined,
+                            color: AppTheme.muted, size: 20),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: DropdownButtonFormField<AgeUnit>(
+                      initialValue: _selectedAgeUnit,
+                      dropdownColor: AppTheme.surface,
+                      decoration: const InputDecoration(labelText: 'Age Unit'),
+                      items: const [
+                        DropdownMenuItem(
+                            value: AgeUnit.days, child: Text('Days')),
+                        DropdownMenuItem(
+                            value: AgeUnit.months, child: Text('Months')),
+                        DropdownMenuItem(
+                            value: AgeUnit.years, child: Text('Years')),
+                      ],
+                      onChanged: (value) {
+                        if (value != null) {
+                          setState(() {
+                            _selectedAgeUnit = value;
+                          });
+                        }
+                      },
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(height: 16),
 
@@ -238,8 +270,7 @@ class _DoseCalculatorScreenState extends ConsumerState<DoseCalculatorScreen> {
                     children: [
                       const Text(
                         'Calculated Flow Rate',
-                        style:
-                            TextStyle(color: AppTheme.success, fontSize: 13),
+                        style: TextStyle(color: AppTheme.success, fontSize: 13),
                       ),
                       const SizedBox(height: 8),
                       Text(
@@ -257,32 +288,54 @@ class _DoseCalculatorScreenState extends ConsumerState<DoseCalculatorScreen> {
                             color: AppTheme.muted, fontSize: 11),
                         textAlign: TextAlign.center,
                       ),
+                      const SizedBox(height: 4),
+                      Text(
+                        'Entered daily dose: ${_enteredDailyDoseMg?.toStringAsFixed(1) ?? '0.0'} mg/day',
+                        style: const TextStyle(
+                            color: AppTheme.muted, fontSize: 11),
+                        textAlign: TextAlign.center,
+                      ),
                     ],
                   ),
                 ),
                 const SizedBox(height: 12),
 
-                // Warning if rate exceeds safe range
-                if (_warningMessage != null)
+                if (_infoMessage != null)
                   Container(
                     width: double.infinity,
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: const Color(0x33E67E22),
+                      color: _deliveryBlocked
+                          ? const Color(0x33E74C3C)
+                          : const Color(0x332ECC71),
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
-                          color: const Color(0x66E67E22), width: 1),
+                          color: _deliveryBlocked
+                              ? const Color(0x66E74C3C)
+                              : const Color(0x662ECC71),
+                          width: 1),
                     ),
                     child: Row(
                       children: [
-                        const Icon(Icons.warning_amber_rounded,
-                            color: AppTheme.warning, size: 20),
+                        Icon(
+                          _deliveryBlocked
+                              ? Icons.block_rounded
+                              : Icons.verified_rounded,
+                          color: _deliveryBlocked
+                              ? AppTheme.error
+                              : AppTheme.success,
+                          size: 20,
+                        ),
                         const SizedBox(width: 8),
                         Expanded(
                           child: Text(
-                            _warningMessage!,
-                            style: const TextStyle(
-                                color: AppTheme.warning, fontSize: 12),
+                            _infoMessage!,
+                            style: TextStyle(
+                              color: _deliveryBlocked
+                                  ? AppTheme.error
+                                  : AppTheme.success,
+                              fontSize: 12,
+                            ),
                           ),
                         ),
                       ],
@@ -295,7 +348,8 @@ class _DoseCalculatorScreenState extends ConsumerState<DoseCalculatorScreen> {
                   width: double.infinity,
                   height: 56,
                   child: OutlinedButton.icon(
-                    onPressed: _isSending ? null : _sendToDevice,
+                    onPressed:
+                        (_isSending || _deliveryBlocked) ? null : _sendToDevice,
                     icon: _isSending
                         ? const SizedBox(
                             width: 20,
@@ -304,16 +358,17 @@ class _DoseCalculatorScreenState extends ConsumerState<DoseCalculatorScreen> {
                                 strokeWidth: 2, color: AppTheme.primary),
                           )
                         : const Icon(Icons.send_rounded),
-                    label: Text(
-                        _isSending ? 'Sending...' : 'Send to Device'),
+                    label: Text(_deliveryBlocked
+                        ? 'Delivery Blocked'
+                        : (_isSending ? 'Sending...' : 'Send to Device')),
                   ),
                 ),
               ],
               const SizedBox(height: 24),
 
-              // Drug reference table
+              // Quick preview of loaded IV drug library
               const Text(
-                'DRUG REFERENCE TABLE',
+                'IV DRUG LIBRARY',
                 style: TextStyle(
                   color: AppTheme.muted,
                   fontSize: 12,
@@ -324,10 +379,43 @@ class _DoseCalculatorScreenState extends ConsumerState<DoseCalculatorScreen> {
               const SizedBox(height: 8),
               Container(
                 decoration: AppTheme.cardDecoration,
-                child: Column(
-                  children: _drugReferences
-                      .map((drug) => _DrugRefTile(drug: drug))
-                      .toList(),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                child: ivDrugNamesAsync.when(
+                  loading: () => const Text(
+                    'Loading library...',
+                    style: TextStyle(color: AppTheme.muted),
+                  ),
+                  error: (err, _) => Text(
+                    'Library error: $err',
+                    style: const TextStyle(color: AppTheme.error),
+                  ),
+                  data: (drugs) {
+                    final preview = drugs.take(12).toList();
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'IV entries available: ${drugs.length} drugs',
+                          style: const TextStyle(
+                              color: AppTheme.onSurface, fontSize: 13),
+                        ),
+                        const SizedBox(height: 8),
+                        Wrap(
+                          spacing: 6,
+                          runSpacing: 6,
+                          children: preview
+                              .map((drug) => Chip(
+                                    label: Text(drug),
+                                    backgroundColor: AppTheme.surface,
+                                    side: const BorderSide(
+                                        color: Color(0x441E88E5), width: 0.8),
+                                  ))
+                              .toList(),
+                        ),
+                      ],
+                    );
+                  },
                 ),
               ),
             ],
@@ -354,21 +442,15 @@ class _DoseCalculatorScreenState extends ConsumerState<DoseCalculatorScreen> {
     }
 
     final rate = (dose * weight * conversionFactor) / concentration;
+    final dailyDoseMg = _toDailyDoseMg(dose, weight);
 
-    // Check if rate is within safe range for selected drug
-    String? warning;
-    final drugRef = _drugReferences.where((d) => d.name == _selectedDrug);
-    if (drugRef.isNotEmpty) {
-      final ref = drugRef.first;
-      if (rate > ref.maxSafeRate) {
-        warning =
-            'Calculated rate (${rate.toStringAsFixed(1)} mL/hr) exceeds the typical safe range for ${ref.name} (max ~${ref.maxSafeRate} mL/hr). Verify prescription.';
-      }
-    }
+    _debouncer.run(() {
+      _validateDoseAgainstLibrary(dailyDoseMg);
+    });
 
     setState(() {
       _calculatedRate = rate;
-      _warningMessage = warning;
+      _enteredDailyDoseMg = dailyDoseMg;
     });
   }
 
@@ -385,22 +467,55 @@ class _DoseCalculatorScreenState extends ConsumerState<DoseCalculatorScreen> {
   Future<void> _sendToDevice() async {
     if (_calculatedRate == null) return;
 
+    final dailyDoseMg = _enteredDailyDoseMg ??
+        _toDailyDoseMg(
+          double.parse(_doseController.text),
+          double.parse(_weightController.text),
+        );
+
+    final isAllowed = await _validateDoseAgainstLibrary(dailyDoseMg);
+    if (!isAllowed) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content:
+                Text(_infoMessage ?? 'Dose is blocked by the drug library.'),
+            backgroundColor: AppTheme.error,
+          ),
+        );
+      }
+      return;
+    }
+
     setState(() => _isSending = true);
 
     try {
       final service = ref.read(firebaseServiceProvider);
+      final currentPump = ref.read(pumpDataProvider).valueOrNull;
+      final currentVolume = currentPump?.setVolumeML ?? 0;
+
       await service.setDosingParameters(
-        drugName: _selectedDrug.isNotEmpty ? _selectedDrug : 'Custom',
+        drugName: _selectedDrug,
         patientWeightKg: double.parse(_weightController.text),
         dosePerKg: double.parse(_doseController.text),
         calculatedFlowRate: _calculatedRate!,
       );
-      await service.setFlowRate(_calculatedRate!);
+
+      // Keep Control tab and pump settings in sync by writing through pumpRoot.
+      if (currentVolume > 0) {
+        await service.applySettings(
+          flowRate: _calculatedRate!,
+          volume: currentVolume,
+        );
+      } else {
+        await service.setFlowRate(_calculatedRate!);
+      }
 
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Dosing parameters sent to device'),
+            content: Text(
+                'Dosing parameters sent to device (IV safety check passed)'),
             backgroundColor: AppTheme.success,
           ),
         );
@@ -418,136 +533,41 @@ class _DoseCalculatorScreenState extends ConsumerState<DoseCalculatorScreen> {
       if (mounted) setState(() => _isSending = false);
     }
   }
-}
 
-/// Drug reference tile in the reference table.
-class _DrugRefTile extends StatelessWidget {
-  final DrugReference drug;
-  const _DrugRefTile({required this.drug});
+  double _toDailyDoseMg(double dosePerKg, double weightKg) {
+    if (_selectedUnit == 'mcg/kg/min') {
+      return dosePerKg * weightKg * 60 * 24 / 1000;
+    }
+    return dosePerKg * weightKg * 24;
+  }
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-      decoration: const BoxDecoration(
-        border: Border(
-          bottom: BorderSide(color: Color(0x221E88E5), width: 0.5),
-        ),
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            flex: 3,
-            child: Text(drug.name,
-                style: const TextStyle(
-                    color: AppTheme.onSurface,
-                    fontSize: 13,
-                    fontWeight: FontWeight.w500)),
-          ),
-          Expanded(
-            flex: 2,
-            child: Text(drug.doseRange,
-                style:
-                    const TextStyle(color: AppTheme.muted, fontSize: 12)),
-          ),
-          Expanded(
-            flex: 2,
-            child: Text(drug.unit,
-                style:
-                    const TextStyle(color: AppTheme.muted, fontSize: 11)),
-          ),
-        ],
-      ),
-    );
+  String? _validateAge(String? value) {
+    if (value == null || value.isEmpty) return 'Age is required';
+    final n = double.tryParse(value);
+    if (n == null) return 'Enter a valid number';
+    if (n <= 0) return 'Age must be greater than 0';
+    return null;
+  }
+
+  Future<bool> _validateDoseAgainstLibrary(double dailyDoseMg) async {
+    final age = double.parse(_ageController.text);
+    final weight = double.parse(_weightController.text);
+
+    final validation = await ref.read(drugLibraryServiceProvider).validateDose(
+          selectedDrug: _selectedDrug,
+          ageValue: age,
+          ageUnit: _selectedAgeUnit,
+          weightKg: weight,
+          enteredDailyDoseMg: dailyDoseMg,
+        );
+
+    if (mounted) {
+      setState(() {
+        _deliveryBlocked = !validation.isAllowed;
+        _infoMessage = validation.message;
+      });
+    }
+
+    return validation.isAllowed;
   }
 }
-
-/// Pre-loaded drug reference data for 10 common ICU drugs.
-class DrugReference {
-  final String name;
-  final String doseRange;
-  final String unit;
-  final double standardConcentration; // mg/mL
-  final double maxSafeRate; // mL/hr
-
-  const DrugReference({
-    required this.name,
-    required this.doseRange,
-    required this.unit,
-    required this.standardConcentration,
-    required this.maxSafeRate,
-  });
-}
-
-const List<DrugReference> _drugReferences = [
-  DrugReference(
-    name: 'Dopamine',
-    doseRange: '2-20',
-    unit: 'mcg/kg/min',
-    standardConcentration: 1.6,
-    maxSafeRate: 100,
-  ),
-  DrugReference(
-    name: 'Dobutamine',
-    doseRange: '2.5-20',
-    unit: 'mcg/kg/min',
-    standardConcentration: 1.0,
-    maxSafeRate: 120,
-  ),
-  DrugReference(
-    name: 'Norepinephrine',
-    doseRange: '0.01-0.3',
-    unit: 'mcg/kg/min',
-    standardConcentration: 0.016,
-    maxSafeRate: 100,
-  ),
-  DrugReference(
-    name: 'Heparin',
-    doseRange: '10-25',
-    unit: 'units/kg/hr',
-    standardConcentration: 100.0,
-    maxSafeRate: 50,
-  ),
-  DrugReference(
-    name: 'Morphine',
-    doseRange: '0.01-0.05',
-    unit: 'mg/kg/hr',
-    standardConcentration: 1.0,
-    maxSafeRate: 10,
-  ),
-  DrugReference(
-    name: 'Midazolam',
-    doseRange: '0.5-6',
-    unit: 'mcg/kg/min',
-    standardConcentration: 1.0,
-    maxSafeRate: 30,
-  ),
-  DrugReference(
-    name: 'Propofol',
-    doseRange: '25-75',
-    unit: 'mcg/kg/min',
-    standardConcentration: 10.0,
-    maxSafeRate: 50,
-  ),
-  DrugReference(
-    name: 'Insulin',
-    doseRange: '0.02-0.1',
-    unit: 'units/kg/hr',
-    standardConcentration: 1.0,
-    maxSafeRate: 20,
-  ),
-  DrugReference(
-    name: 'Amiodarone',
-    doseRange: '0.5-1.0',
-    unit: 'mg/kg/hr',
-    standardConcentration: 1.8,
-    maxSafeRate: 60,
-  ),
-  DrugReference(
-    name: 'Furosemide',
-    doseRange: '0.1-0.4',
-    unit: 'mg/kg/hr',
-    standardConcentration: 10.0,
-    maxSafeRate: 10,
-  ),
-];

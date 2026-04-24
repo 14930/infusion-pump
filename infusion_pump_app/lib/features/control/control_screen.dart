@@ -6,6 +6,7 @@ import '../../core/widgets/connection_indicator.dart';
 import '../../core/widgets/status_chip.dart';
 import '../../core/utils/debouncer.dart';
 import '../../core/utils/validators.dart';
+import '../../shared/models/pump_data.dart';
 import '../../shared/providers/firebase_providers.dart';
 
 /// Screen 3 - Manual Control
@@ -21,6 +22,8 @@ class _ControlScreenState extends ConsumerState<ControlScreen> {
   final _formKey = GlobalKey<FormState>();
   final _flowRateController = TextEditingController();
   final _volumeController = TextEditingController();
+  final _flowRateFocusNode = FocusNode();
+  final _volumeFocusNode = FocusNode();
   final _debouncer = Debouncer(milliseconds: 300);
   bool _isApplying = false;
 
@@ -28,6 +31,8 @@ class _ControlScreenState extends ConsumerState<ControlScreen> {
   void dispose() {
     _flowRateController.dispose();
     _volumeController.dispose();
+    _flowRateFocusNode.dispose();
+    _volumeFocusNode.dispose();
     _debouncer.dispose();
     super.dispose();
   }
@@ -56,7 +61,10 @@ class _ControlScreenState extends ConsumerState<ControlScreen> {
             pumpAsync.when(
               loading: () => const SizedBox.shrink(),
               error: (_, __) => const SizedBox.shrink(),
-              data: (pump) => Center(child: StatusChip(status: pump.status)),
+              data: (pump) {
+                _syncControllersFromPump(pump);
+                return Center(child: StatusChip(status: pump.status));
+              },
             ),
             const SizedBox(height: 24),
 
@@ -120,6 +128,7 @@ class _ControlScreenState extends ConsumerState<ControlScreen> {
                 children: [
                   TextFormField(
                     controller: _flowRateController,
+                    focusNode: _flowRateFocusNode,
                     keyboardType:
                         const TextInputType.numberWithOptions(decimal: true),
                     validator: Validators.flowRate,
@@ -134,6 +143,7 @@ class _ControlScreenState extends ConsumerState<ControlScreen> {
                   const SizedBox(height: 16),
                   TextFormField(
                     controller: _volumeController,
+                    focusNode: _volumeFocusNode,
                     keyboardType:
                         const TextInputType.numberWithOptions(decimal: true),
                     validator: Validators.volume,
@@ -161,8 +171,8 @@ class _ControlScreenState extends ConsumerState<ControlScreen> {
                               ),
                             )
                           : const Icon(Icons.send_rounded),
-                      label: Text(
-                          _isApplying ? 'Applying...' : 'Apply Settings'),
+                      label:
+                          Text(_isApplying ? 'Applying...' : 'Apply Settings'),
                     ),
                   ),
                 ],
@@ -182,8 +192,8 @@ class _ControlScreenState extends ConsumerState<ControlScreen> {
             ),
             const SizedBox(height: 12),
             pumpAsync.when(
-              loading: () => const LinearProgressIndicator(
-                  color: AppTheme.primary),
+              loading: () =>
+                  const LinearProgressIndicator(color: AppTheme.primary),
               error: (err, _) => Text('Error: $err',
                   style: const TextStyle(color: AppTheme.error)),
               data: (pump) => Container(
@@ -282,6 +292,34 @@ class _ControlScreenState extends ConsumerState<ControlScreen> {
       if (mounted) setState(() => _isApplying = false);
     }
   }
+
+  void _syncControllersFromPump(PumpData pump) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+
+      final flowText = _formatNumber(pump.setFlowRateMLperHR);
+      if (!_flowRateFocusNode.hasFocus &&
+          pump.setFlowRateMLperHR > 0 &&
+          _flowRateController.text != flowText) {
+        _flowRateController.text = flowText;
+      }
+
+      final volumeText = _formatNumber(pump.setVolumeML);
+      if (!_volumeFocusNode.hasFocus &&
+          pump.setVolumeML > 0 &&
+          _volumeController.text != volumeText) {
+        _volumeController.text = volumeText;
+      }
+    });
+  }
+
+  String _formatNumber(double value) {
+    if (value % 1 == 0) return value.toStringAsFixed(0);
+    return value
+        .toStringAsFixed(2)
+        .replaceFirst(RegExp(r'0+$'), '')
+        .replaceFirst(RegExp(r'\.$'), '');
+  }
 }
 
 /// A colored control button (Start/Pause/Stop).
@@ -347,7 +385,8 @@ class _InfoRow extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(label, style: const TextStyle(color: AppTheme.muted, fontSize: 13)),
+          Text(label,
+              style: const TextStyle(color: AppTheme.muted, fontSize: 13)),
           Text(value,
               style: const TextStyle(
                   color: AppTheme.onSurface,

@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "C:/Users/PC/Downloads/28692437/infusion_pump_app/windows"
+    "cmake.sourceDirectory": "C:/Users/PC/Downloads/28692437/infusion_pump_app/windows",
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
