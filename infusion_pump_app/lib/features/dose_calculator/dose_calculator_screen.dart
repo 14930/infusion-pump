@@ -392,7 +392,8 @@ class _DoseCalculatorScreenState extends ConsumerState<DoseCalculatorScreen> {
       await service.setDosingParameters(
         drugName: _selectedDrug.isNotEmpty ? _selectedDrug : 'Custom',
         patientWeightKg: double.parse(_weightController.text),
-        calculatedRate: _calculatedRate!,
+        dosePerKg: double.parse(_doseController.text),
+        calculatedFlowRate: _calculatedRate!,
       );
       await service.setFlowRate(_calculatedRate!);
 

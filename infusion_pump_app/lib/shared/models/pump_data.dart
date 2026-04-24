@@ -4,8 +4,10 @@ class PumpData {
   final double expectedVolumeML;
   final double setFlowRateMLperHR;
   final double setVolumeML;
-  final double weightGrams;
+  final double remainingML;
+  final double remainingTimeMin;
   final String status;
+  final String command;
   final DateTime lastUpdated;
 
   const PumpData({
@@ -13,8 +15,10 @@ class PumpData {
     this.expectedVolumeML = 0.0,
     this.setFlowRateMLperHR = 0.0,
     this.setVolumeML = 0.0,
-    this.weightGrams = 0.0,
+    this.remainingML = 0.0,
+    this.remainingTimeMin = 0.0,
     this.status = 'idle',
+    this.command = '',
     required this.lastUpdated,
   });
 
@@ -24,8 +28,10 @@ class PumpData {
       expectedVolumeML: _toDouble(map['expectedVolumeML']),
       setFlowRateMLperHR: _toDouble(map['setFlowRateMLperHR']),
       setVolumeML: _toDouble(map['setVolumeML']),
-      weightGrams: _toDouble(map['weightGrams']),
+      remainingML: _toDouble(map['remainingML']),
+      remainingTimeMin: _toDouble(map['remainingTimeMin']),
       status: (map['status'] as String?) ?? 'idle',
+      command: (map['command'] as String?) ?? '',
       lastUpdated: DateTime.now(),
     );
   }
@@ -38,17 +44,9 @@ class PumpData {
     return (dispensedML / setVolumeML).clamp(0.0, 1.0);
   }
 
-  /// Remaining time estimate in minutes.
-  double get remainingMinutes {
-    if (setFlowRateMLperHR <= 0) return 0.0;
-    final remaining = setVolumeML - dispensedML;
-    if (remaining <= 0) return 0.0;
-    return remaining / (setFlowRateMLperHR / 60.0);
-  }
-
-  /// Formatted remaining time.
+  /// Formatted remaining time (read from Firebase remainingTimeMin).
   String get remainingTimeFormatted {
-    final mins = remainingMinutes;
+    final mins = remainingTimeMin;
     if (mins <= 0) return 'Complete';
     if (mins < 60) return '${mins.toStringAsFixed(0)} min';
     final hours = (mins / 60).floor();

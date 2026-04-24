@@ -1,57 +1,20 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:intl/intl.dart';
 
 import '../../core/theme/app_theme.dart';
 import '../../core/widgets/connection_indicator.dart';
 import '../../shared/providers/firebase_providers.dart';
 
 /// Screen 5 - Infusion History Log
-/// Shows completed session records stored locally.
-class HistoryScreen extends ConsumerStatefulWidget {
+/// Shows completed session records from Firebase history/.
+class HistoryScreen extends ConsumerWidget {
   const HistoryScreen({super.key});
 
   @override
-  ConsumerState<HistoryScreen> createState() => _HistoryScreenState();
-}
-
-class _HistoryScreenState extends ConsumerState<HistoryScreen> {
-  List<SessionRecord> _sessions = [];
-  bool _isLoading = true;
-
-  @override
-  void initState() {
-    super.initState();
-    _loadSessions();
-  }
-
-  Future<void> _loadSessions() async {
-    final prefs = await SharedPreferences.getInstance();
-    final jsonList = prefs.getStringList('infusion_sessions') ?? [];
-    setState(() {
-      _sessions = jsonList
-          .map((json) => SessionRecord.fromJson(jsonDecode(json)))
-          .toList()
-        ..sort((a, b) => b.startTime.compareTo(a.startTime));
-      _isLoading = false;
-    });
-  }
-
-  /// Save a new session record.
-  // ignore: unused_element - Called externally by other screens when sessions end
-  static Future<void> saveSession(SessionRecord session) async {
-    final prefs = await SharedPreferences.getInstance();
-    final jsonList = prefs.getStringList('infusion_sessions') ?? [];
-    jsonList.add(jsonEncode(session.toJson()));
-    await prefs.setStringList('infusion_sessions', jsonList);
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final connectionAsync = ref.watch(connectionProvider);
+    final historyAsync = ref.watch(historyProvider);
     final isConnected = connectionAsync.valueOrNull ?? false;
 
     return Scaffold(
@@ -63,44 +26,61 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
           ConnectionIndicator(isConnected: isConnected),
         ],
       ),
-      body: _isLoading
-          ? const Center(
-              child: CircularProgressIndicator(color: AppTheme.primary))
-          : _sessions.isEmpty
-              ? Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(Icons.history_rounded,
-                          size: 64, color: AppTheme.muted.withAlpha(100)),
-                      const SizedBox(height: 16),
-                      const Text(
-                        'No infusion sessions recorded yet',
-                        style: TextStyle(color: AppTheme.muted, fontSize: 15),
-                      ),
-                      const SizedBox(height: 8),
-                      const Text(
-                        'Completed and stopped sessions will appear here.',
-                        style: TextStyle(color: AppTheme.muted, fontSize: 12),
-                      ),
-                    ],
+      body: historyAsync.when(
+        loading: () => const Center(
+            child: CircularProgressIndicator(color: AppTheme.primary)),
+        error: (err, _) => Center(
+          child: Text('Error: $err',
+              style: const TextStyle(color: AppTheme.muted)),
+        ),
+        data: (sessions) {
+          if (sessions.isEmpty) {
+            return Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(Icons.history_rounded,
+                      size: 64, color: AppTheme.muted.withAlpha(100)),
+                  const SizedBox(height: 16),
+                  const Text(
+                    'No infusion sessions recorded yet',
+                    style: TextStyle(color: AppTheme.muted, fontSize: 15),
                   ),
-                )
-              : ListView.builder(
-                  padding: const EdgeInsets.all(16),
-                  itemCount: _sessions.length,
-                  itemBuilder: (context, index) {
-                    return _SessionCard(
-                      session: _sessions[index],
-                      onExport: () => _exportSession(_sessions[index]),
-                    );
-                  },
-                ),
+                  const SizedBox(height: 8),
+                  const Text(
+                    'Completed and stopped sessions will appear here.',
+                    style: TextStyle(color: AppTheme.muted, fontSize: 12),
+                  ),
+                ],
+              ),
+            );
+          }
+
+          // Sort by date descending
+          final sorted = List<Map<String, dynamic>>.from(sessions)
+            ..sort((a, b) {
+              final aDate = (a['date'] as String?) ?? '';
+              final bDate = (b['date'] as String?) ?? '';
+              return bDate.compareTo(aDate);
+            });
+
+          return ListView.builder(
+            padding: const EdgeInsets.all(16),
+            itemCount: sorted.length,
+            itemBuilder: (context, index) {
+              return _SessionCard(
+                session: sorted[index],
+                onExport: () => _exportSession(context, sorted[index]),
+              );
+            },
+          );
+        },
+      ),
     );
   }
 
-  void _exportSession(SessionRecord session) {
-    final text = session.toSummaryText();
+  void _exportSession(BuildContext context, Map<String, dynamic> session) {
+    final text = _buildSummaryText(session);
     Clipboard.setData(ClipboardData(text: text));
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
@@ -109,11 +89,37 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
       ),
     );
   }
+
+  String _buildSummaryText(Map<String, dynamic> s) {
+    final buf = StringBuffer();
+    buf.writeln('--- Infusion Session Summary ---');
+    buf.writeln('Date: ${s['date'] ?? ''}');
+    buf.writeln('Drug: ${s['drugName'] ?? 'Unknown'}');
+    buf.writeln('Started: ${s['startTime'] ?? ''}');
+    buf.writeln('Ended: ${s['endTime'] ?? ''}');
+    buf.writeln(
+        'Flow Rate: ${_toDouble(s['setFlowRate']).toStringAsFixed(1)} mL/hr');
+    buf.writeln(
+        'Total Dispensed: ${_toDouble(s['totalDispensed']).toStringAsFixed(1)} mL');
+    final alarms = s['alarmsTriggered'] ?? '';
+    if (alarms.toString().isNotEmpty) {
+      buf.writeln('Alarms: $alarms');
+    }
+    buf.writeln('--------------------------------');
+    return buf.toString();
+  }
+
+  double _toDouble(Object? value) {
+    if (value == null) return 0.0;
+    if (value is num) return value.toDouble();
+    if (value is String) return double.tryParse(value) ?? 0.0;
+    return 0.0;
+  }
 }
 
 /// Expandable session card.
 class _SessionCard extends StatefulWidget {
-  final SessionRecord session;
+  final Map<String, dynamic> session;
   final VoidCallback onExport;
 
   const _SessionCard({required this.session, required this.onExport});
@@ -125,10 +131,23 @@ class _SessionCard extends StatefulWidget {
 class _SessionCardState extends State<_SessionCard> {
   bool _expanded = false;
 
+  double _toDouble(Object? value) {
+    if (value == null) return 0.0;
+    if (value is num) return value.toDouble();
+    if (value is String) return double.tryParse(value) ?? 0.0;
+    return 0.0;
+  }
+
   @override
   Widget build(BuildContext context) {
     final s = widget.session;
-    final dateFormat = DateFormat('MMM dd, yyyy HH:mm');
+    final drugName = (s['drugName'] as String?) ?? 'Unknown Drug';
+    final date = (s['date'] as String?) ?? '';
+    final startTime = (s['startTime'] as String?) ?? '';
+    final endTime = (s['endTime'] as String?) ?? '';
+    final setFlowRate = _toDouble(s['setFlowRate']);
+    final totalDispensed = _toDouble(s['totalDispensed']);
+    final alarmsTriggered = (s['alarmsTriggered'] as String?) ?? '';
 
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
@@ -159,7 +178,7 @@ class _SessionCardState extends State<_SessionCard> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          s.drugName.isNotEmpty ? s.drugName : 'Unknown Drug',
+                          drugName.isNotEmpty ? drugName : 'Unknown Drug',
                           style: const TextStyle(
                             color: AppTheme.onSurface,
                             fontSize: 14,
@@ -167,7 +186,7 @@ class _SessionCardState extends State<_SessionCard> {
                           ),
                         ),
                         Text(
-                          dateFormat.format(s.startTime),
+                          '$date  $startTime',
                           style: const TextStyle(
                               color: AppTheme.muted, fontSize: 12),
                         ),
@@ -175,7 +194,7 @@ class _SessionCardState extends State<_SessionCard> {
                     ),
                   ),
                   Text(
-                    '${s.totalDispensedML.toStringAsFixed(1)} mL',
+                    '${totalDispensed.toStringAsFixed(1)} mL',
                     style: const TextStyle(
                       color: AppTheme.accent,
                       fontSize: 14,
@@ -200,17 +219,15 @@ class _SessionCardState extends State<_SessionCard> {
               child: Column(
                 children: [
                   const Divider(color: Color(0x221E88E5)),
-                  _DetailRow('Started', dateFormat.format(s.startTime)),
-                  if (s.endTime != null)
-                    _DetailRow('Ended', dateFormat.format(s.endTime!)),
-                  _DetailRow(
-                      'Duration', _formatDuration(s.durationMinutes)),
+                  _DetailRow('Date', date),
+                  _DetailRow('Started', startTime),
+                  _DetailRow('Ended', endTime),
                   _DetailRow('Set Flow Rate',
-                      '${s.setFlowRate.toStringAsFixed(1)} mL/hr'),
+                      '${setFlowRate.toStringAsFixed(1)} mL/hr'),
                   _DetailRow('Total Dispensed',
-                      '${s.totalDispensedML.toStringAsFixed(1)} mL'),
-                  if (s.alarmsTriggered.isNotEmpty)
-                    _DetailRow('Alarms', s.alarmsTriggered.join(', ')),
+                      '${totalDispensed.toStringAsFixed(1)} mL'),
+                  if (alarmsTriggered.isNotEmpty)
+                    _DetailRow('Alarms', alarmsTriggered),
                   const SizedBox(height: 8),
                   SizedBox(
                     width: double.infinity,
@@ -230,13 +247,6 @@ class _SessionCardState extends State<_SessionCard> {
         ],
       ),
     );
-  }
-
-  String _formatDuration(double minutes) {
-    if (minutes < 60) return '${minutes.toStringAsFixed(0)} min';
-    final hours = (minutes / 60).floor();
-    final mins = (minutes % 60).floor();
-    return '${hours}h ${mins}m';
   }
 }
 
@@ -268,65 +278,5 @@ class _DetailRow extends StatelessWidget {
         ],
       ),
     );
-  }
-}
-
-/// A single infusion session record.
-class SessionRecord {
-  final String drugName;
-  final DateTime startTime;
-  final DateTime? endTime;
-  final double totalDispensedML;
-  final double setFlowRate;
-  final List<String> alarmsTriggered;
-  final double durationMinutes;
-
-  SessionRecord({
-    required this.drugName,
-    required this.startTime,
-    this.endTime,
-    required this.totalDispensedML,
-    required this.setFlowRate,
-    this.alarmsTriggered = const [],
-    required this.durationMinutes,
-  });
-
-  Map<String, dynamic> toJson() => {
-        'drugName': drugName,
-        'startTime': startTime.toIso8601String(),
-        'endTime': endTime?.toIso8601String(),
-        'totalDispensedML': totalDispensedML,
-        'setFlowRate': setFlowRate,
-        'alarmsTriggered': alarmsTriggered,
-        'durationMinutes': durationMinutes,
-      };
-
-  factory SessionRecord.fromJson(Map<String, dynamic> json) => SessionRecord(
-        drugName: json['drugName'] ?? '',
-        startTime: DateTime.parse(json['startTime']),
-        endTime: json['endTime'] != null
-            ? DateTime.parse(json['endTime'])
-            : null,
-        totalDispensedML: (json['totalDispensedML'] as num?)?.toDouble() ?? 0,
-        setFlowRate: (json['setFlowRate'] as num?)?.toDouble() ?? 0,
-        alarmsTriggered: List<String>.from(json['alarmsTriggered'] ?? []),
-        durationMinutes: (json['durationMinutes'] as num?)?.toDouble() ?? 0,
-      );
-
-  String toSummaryText() {
-    final df = DateFormat('yyyy-MM-dd HH:mm');
-    final buf = StringBuffer();
-    buf.writeln('--- Infusion Session Summary ---');
-    buf.writeln('Drug: $drugName');
-    buf.writeln('Started: ${df.format(startTime)}');
-    if (endTime != null) buf.writeln('Ended: ${df.format(endTime!)}');
-    buf.writeln('Duration: ${durationMinutes.toStringAsFixed(0)} min');
-    buf.writeln('Flow Rate: ${setFlowRate.toStringAsFixed(1)} mL/hr');
-    buf.writeln('Total Dispensed: ${totalDispensedML.toStringAsFixed(1)} mL');
-    if (alarmsTriggered.isNotEmpty) {
-      buf.writeln('Alarms: ${alarmsTriggered.join(", ")}');
-    }
-    buf.writeln('--------------------------------');
-    return buf.toString();
   }
 }

@@ -1,0 +1,56 @@
+/*
+ * ESP32 Firebase Realtime Database Path Reference
+ * ================================================
+ *
+ * This file documents the exact Firebase paths the ESP32 firmware
+ * should READ from and WRITE to, matching the Flutter app structure.
+ *
+ * ── PATHS THE ESP32 WRITES TO (sensor data → Firebase) ──
+ *
+ *   pump/dispensedML         (double)  – Volume dispensed so far in mL
+ *   pump/expectedVolumeML    (double)  – Expected volume at current time
+ *   pump/remainingML         (double)  – Volume remaining = setVolumeML - dispensedML
+ *   pump/remainingTimeMin    (double)  – Estimated time left in minutes
+ *   pump/status              (String)  – "idle" | "running" | "paused" | "complete"
+ *
+ *   alarms/occlusion         (bool)    – true if line blockage detected
+ *   alarms/bubble            (bool)    – true if air bubble detected
+ *   alarms/bagEmpty          (bool)    – true if IV bag is empty
+ *   alarms/complete          (bool)    – true if infusion volume fully delivered
+ *
+ * ── PATHS THE ESP32 READS FROM (app commands → ESP32) ──
+ *
+ *   pump/command             (String)  – "start" | "pause" | "stop"
+ *   pump/setFlowRateMLperHR  (double)  – Desired flow rate in mL/hr
+ *   pump/setVolumeML         (double)  – Target volume in mL
+ *   doseCalc/calculatedFlowRate (double) – Flow rate from dose calculator
+ *
+ * ── EXAMPLE ARDUINO CODE SNIPPET ──
+ *
+ *   #include <Firebase_ESP_Client.h>
+ *
+ *   // WRITE sensor data
+ *   Firebase.RTDB.setDouble(&fbdo, "pump/dispensedML", dispensed);
+ *   Firebase.RTDB.setDouble(&fbdo, "pump/remainingML", remaining);
+ *   Firebase.RTDB.setDouble(&fbdo, "pump/remainingTimeMin", timeLeft);
+ *   Firebase.RTDB.setString(&fbdo, "pump/status", "running");
+ *
+ *   // WRITE alarm states
+ *   Firebase.RTDB.setBool(&fbdo, "alarms/occlusion", occlusionDetected);
+ *   Firebase.RTDB.setBool(&fbdo, "alarms/bubble", bubbleDetected);
+ *   Firebase.RTDB.setBool(&fbdo, "alarms/bagEmpty", bagIsEmpty);
+ *   Firebase.RTDB.setBool(&fbdo, "alarms/complete", infusionDone);
+ *
+ *   // READ commands from app
+ *   Firebase.RTDB.getString(&fbdo, "pump/command");
+ *   String cmd = fbdo.stringData();  // "start", "pause", or "stop"
+ *
+ *   Firebase.RTDB.getDouble(&fbdo, "pump/setFlowRateMLperHR");
+ *   double flowRate = fbdo.doubleData();
+ *
+ *   Firebase.RTDB.getDouble(&fbdo, "pump/setVolumeML");
+ *   double targetVol = fbdo.doubleData();
+ *
+ *   Firebase.RTDB.getDouble(&fbdo, "doseCalc/calculatedFlowRate");
+ *   double calcRate = fbdo.doubleData();
+ */

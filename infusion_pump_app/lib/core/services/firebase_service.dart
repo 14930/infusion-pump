@@ -27,9 +27,15 @@ class FirebaseService {
             (event) => _toDouble(event.snapshot.value),
           );
 
-  /// Stream of weight reading in grams.
-  Stream<double> get weightGramsStream =>
-      _ref.child(FirebasePaths.weightGrams).onValue.map(
+  /// Stream of remaining volume in mL.
+  Stream<double> get remainingMLStream =>
+      _ref.child(FirebasePaths.remainingML).onValue.map(
+            (event) => _toDouble(event.snapshot.value),
+          );
+
+  /// Stream of remaining time in minutes.
+  Stream<double> get remainingTimeMinStream =>
+      _ref.child(FirebasePaths.remainingTimeMin).onValue.map(
             (event) => _toDouble(event.snapshot.value),
           );
 
@@ -91,6 +97,26 @@ class FirebaseService {
         };
       });
 
+  // ── History stream ──
+
+  /// Stream of all session history entries.
+  Stream<List<Map<String, dynamic>>> get historyStream =>
+      _ref.child(FirebasePaths.historyRoot).onValue.map((event) {
+        final data = event.snapshot.value;
+        if (data is Map) {
+          final sessions = <Map<String, dynamic>>[];
+          data.forEach((key, value) {
+            if (value is Map) {
+              final session = Map<String, dynamic>.from(value);
+              session['id'] = key;
+              sessions.add(session);
+            }
+          });
+          return sessions;
+        }
+        return <Map<String, dynamic>>[];
+      });
+
   // ── Connection state ──
 
   Stream<bool> get connectionStream =>
@@ -117,16 +143,18 @@ class FirebaseService {
     await _ref.child(FirebasePaths.command).set(command);
   }
 
-  /// Set dosing parameters.
+  /// Set dose calculator parameters (writes to doseCalc/).
   Future<void> setDosingParameters({
     required String drugName,
     required double patientWeightKg,
-    required double calculatedRate,
+    required double dosePerKg,
+    required double calculatedFlowRate,
   }) async {
-    await _ref.child(FirebasePaths.dosingRoot).update({
+    await _ref.child(FirebasePaths.doseCalcRoot).update({
       'drugName': drugName,
       'patientWeightKg': patientWeightKg,
-      'calculatedRate': calculatedRate,
+      'dosePerKg': dosePerKg,
+      'calculatedFlowRate': calculatedFlowRate,
     });
   }
 
@@ -138,6 +166,32 @@ class FirebaseService {
     await _ref.child(FirebasePaths.pumpRoot).update({
       'setFlowRateMLperHR': flowRate,
       'setVolumeML': volume,
+    });
+  }
+
+  // ════════════════════════════════════════
+  // HISTORY OPERATIONS
+  // ════════════════════════════════════════
+
+  /// Save a completed session to history/.
+  Future<void> saveSessionToHistory({
+    required String sessionId,
+    required String date,
+    required String startTime,
+    required String endTime,
+    required String drugName,
+    required double setFlowRate,
+    required double totalDispensed,
+    required String alarmsTriggered,
+  }) async {
+    await _ref.child('${FirebasePaths.historyRoot}/$sessionId').set({
+      'date': date,
+      'startTime': startTime,
+      'endTime': endTime,
+      'drugName': drugName,
+      'setFlowRate': setFlowRate,
+      'totalDispensed': totalDispensed,
+      'alarmsTriggered': alarmsTriggered,
     });
   }
 

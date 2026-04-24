@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
 import '../../core/services/firebase_service.dart';
 import '../../main.dart' show firebaseInitialized;
 import '../models/pump_data.dart';
@@ -55,6 +57,15 @@ final dispensedMLProvider = StreamProvider<double>((ref) {
   return service.dispensedMLStream;
 });
 
+/// Provider for session history from Firebase.
+final historyProvider = StreamProvider<List<Map<String, dynamic>>>((ref) {
+  if (!firebaseInitialized) {
+    return Stream.value([]);
+  }
+  final service = ref.watch(firebaseServiceProvider);
+  return service.historyStream;
+});
+
 /// Provider for volume chart data points. Accumulates data over time.
 class VolumeChartNotifier extends StateNotifier<List<ChartPoint>> {
   final FirebaseService _service;
@@ -103,6 +114,88 @@ final volumeChartProvider =
     StateNotifierProvider<VolumeChartNotifier, List<ChartPoint>>((ref) {
   final service = ref.watch(firebaseServiceProvider);
   return VolumeChartNotifier(service);
+});
+
+/// Notifier that monitors pump status and auto-saves session to Firebase
+/// history/ when an infusion completes or is stopped.
+class SessionAutoSaveNotifier extends StateNotifier<bool> {
+  final FirebaseService _service;
+  StreamSubscription? _statusSub;
+  StreamSubscription? _pumpSub;
+  String _previousStatus = 'idle';
+  DateTime? _sessionStartTime;
+  Map<String, dynamic> _lastPumpData = {};
+
+  SessionAutoSaveNotifier(this._service) : super(false) {
+    if (firebaseInitialized) {
+      _pumpSub = _service.pumpDataStream.listen((data) {
+        _lastPumpData = data;
+      });
+
+      _statusSub = _service.statusStream.listen((status) {
+        // Detect transition to running → record start time
+        if (status == 'running' && _previousStatus != 'running') {
+          _sessionStartTime = DateTime.now();
+        }
+
+        // Detect transition to complete or stop → save session
+        if ((status == 'complete' || status == 'idle') &&
+            (_previousStatus == 'running' || _previousStatus == 'paused') &&
+            _sessionStartTime != null) {
+          _saveSession();
+        }
+
+        _previousStatus = status;
+      });
+    }
+  }
+
+  Future<void> _saveSession() async {
+    final now = DateTime.now();
+    final dateFormat = DateFormat('yyyy-MM-dd');
+    final timeFormat = DateFormat('HH:mm:ss');
+    final sessionId =
+        'session_${now.millisecondsSinceEpoch}';
+
+    try {
+      await _service.saveSessionToHistory(
+        sessionId: sessionId,
+        date: dateFormat.format(now),
+        startTime: _sessionStartTime != null
+            ? timeFormat.format(_sessionStartTime!)
+            : '',
+        endTime: timeFormat.format(now),
+        drugName: (_lastPumpData['drugName'] as String?) ?? '',
+        setFlowRate: _toDouble(_lastPumpData['setFlowRateMLperHR']),
+        totalDispensed: _toDouble(_lastPumpData['dispensedML']),
+        alarmsTriggered: '', // Will be populated by alarm data if needed
+      );
+      debugPrint('✅ Session saved to history: $sessionId');
+    } catch (e) {
+      debugPrint('⚠️ Failed to save session: $e');
+    }
+
+    _sessionStartTime = null;
+  }
+
+  double _toDouble(Object? value) {
+    if (value == null) return 0.0;
+    if (value is num) return value.toDouble();
+    return 0.0;
+  }
+
+  @override
+  void dispose() {
+    _statusSub?.cancel();
+    _pumpSub?.cancel();
+    super.dispose();
+  }
+}
+
+final sessionAutoSaveProvider =
+    StateNotifierProvider<SessionAutoSaveNotifier, bool>((ref) {
+  final service = ref.watch(firebaseServiceProvider);
+  return SessionAutoSaveNotifier(service);
 });
 
 /// A single data point for the volume chart.

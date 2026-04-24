@@ -22,6 +22,9 @@ class DashboardScreen extends ConsumerWidget {
     final chartPoints = ref.watch(volumeChartProvider);
     final isConnected = connectionAsync.valueOrNull ?? false;
 
+    // Ensure session auto-save is active
+    ref.watch(sessionAutoSaveProvider);
+
     return Scaffold(
       backgroundColor: Colors.transparent,
       appBar: AppBar(
@@ -88,6 +91,34 @@ class DashboardScreen extends ConsumerWidget {
               ),
             ],
           ),
+          const SizedBox(height: 12),
+
+          // Second row: remaining volume & remaining time
+          Row(
+            children: [
+              Expanded(
+                child: MetricCard(
+                  title: 'Remaining',
+                  value: pump.remainingML.toStringAsFixed(1),
+                  unit: 'mL',
+                  icon: Icons.hourglass_bottom_rounded,
+                  tooltip:
+                      'Volume of fluid remaining to be infused.',
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: MetricCard(
+                  title: 'Time Left',
+                  value: pump.remainingTimeMin.toStringAsFixed(0),
+                  unit: 'min',
+                  icon: Icons.timer_outlined,
+                  tooltip:
+                      'Estimated time remaining until infusion completion.',
+                ),
+              ),
+            ],
+          ),
           const SizedBox(height: 16),
 
           // Circular progress
@@ -128,18 +159,6 @@ class DashboardScreen extends ConsumerWidget {
 
           // Volume chart
           _VolumeChart(points: chartPoints),
-          const SizedBox(height: 16),
-
-          // Weight reading
-          MetricCard(
-            title: 'Load Cell Weight',
-            value: pump.weightGrams.toStringAsFixed(1),
-            unit: 'g',
-            icon: Icons.monitor_weight_outlined,
-            tooltip:
-                'Weight reading from the load cell sensor on the IV bag hanger.',
-            lastUpdated: 'Updated just now',
-          ),
         ],
       ),
     );
